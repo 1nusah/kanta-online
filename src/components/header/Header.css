@@ -1,0 +1,16 @@
+.header {
+	background-color: #333333;
+	color: #adadad;
+}
+.header_brand {
+	padding-right: 30%;
+}
+.header Button {
+	color: #adadad;
+}
+.header_row {
+	display: flex;
+}
+.header_button {
+	margin-right: 30px;
+}
