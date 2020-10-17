@@ -26,7 +26,7 @@ export default function Header() {
 	const classes = useStyles();
 
 	return (
-		<div className="header">
+		<div className="header" style={{ backgroundColor: '#fff' }}>
 			<AppBar position="fixed" style={{ backgroundColor: '#333333' }}>
 				<Toolbar className={classes.title}>
 					<Typography className="header_brand" variant="h6">

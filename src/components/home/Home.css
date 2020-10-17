@@ -1,0 +1,79 @@
+.home_button {
+	background-color: #000;
+	color: #adadad;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	background-image: url('../../assets/images/tinashe-mwaniki-7ZGbAKNZdnA-unsplash.jpg');
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.home {
+	background-color: #000;
+}
+.images > img {
+	padding-top: 10px;
+}
+.images_women {
+	background-image: url('../../assets/images/ian-dooley-TT-ROxWj9nA-unsplash\ \(1\).jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+	padding-top: 10px;
+	display: flex;
+	margin-top: 10px;
+	justify-content: center;
+	align-items: center;
+}
+
+.images_casual_wear {
+	background-image: url('../../assets/images/julian-myles-7cmPtNl1XdM-unsplash.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+	padding-top: 10px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	margin-top: 10px;
+}
+.images > Typography {
+	color: #fff;
+}
+/* .outdoor {
+	background-image: url('../../assets/images/outdoor.jpg');
+	height: 100vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.classic {
+	background-image: url('../../assets/images/toni-hukkanen-lO-p5nHKSVQ-unsplash.jpg');
+	height: 100vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.summer {
+	background-image: url('../../assets/images/junko-nakase-Q-72wa9-7Dg-unsplash.jpg');
+	height: 100vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.floral {
+	background-image: url('../../assets/images/laura-d-vargas-7AbaE-DDBd8-unsplash.jpg');
+	height: 100vh;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+} */

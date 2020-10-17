@@ -1,0 +1,18 @@
+.footer {
+	background-color: #333333;
+	color: #adadad;
+	padding: 10%;
+}
+.footer_header {
+	color: #fff;
+}
+.footer_item p,
+.footer_item p:visited,
+.footer_item p:hover,
+.footer_item p:active {
+	color: #adadad;
+}
+/* .footer_item p {
+	color: #adadad;
+	text-decoration-line: none;
+} */
