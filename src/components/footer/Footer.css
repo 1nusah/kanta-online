@@ -5,14 +5,10 @@
 }
 .footer_header {
 	color: #fff;
+	padding-bottom: 10px;
 }
-.footer_item p,
-.footer_item p:visited,
-.footer_item p:hover,
-.footer_item p:active {
+.footer_item p {
 	color: #adadad;
+	text-decoration: none;
+	padding-bottom: 10px;
 }
-/* .footer_item p {
-	color: #adadad;
-	text-decoration-line: none;
-} */

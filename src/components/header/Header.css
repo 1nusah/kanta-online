@@ -8,10 +8,17 @@
 }
 .header Button {
 	color: #adadad;
+	display: flex;
 }
 .header_row {
 	display: flex;
 }
 .header_button {
 	margin-right: 30px;
+}
+.header_link {
+	text-decoration: none;
+}
+sup {
+	color: #adadad;
 }

@@ -12,24 +12,17 @@ const Footer = () => {
 					<h3>Customer Service</h3>
 				</div>
 				<div className="footer_item">
-					<Link to="/payment">
-						<p>Payment</p>
-					</Link>
-					<Link>
-						<p>Shopping</p>
-					</Link>
-					<Link>
-						<p>Returns</p>
-					</Link>
-					<Link>
-						<p>FAQ</p>
-					</Link>
-					<Link>
-						<p>Product After Care</p>
-					</Link>
-					<Link>
-						<p>Gift Cards</p>
-					</Link>
+					<p>Payment</p>
+
+					<p>Shopping</p>
+
+					<p>Returns</p>
+
+					<p>FAQ</p>
+
+					<p>Product After Care</p>
+
+					<p>Gift Cards</p>
 				</div>
 			</Grid>
 			<Grid item xs={12} md={3} lg={3}>
@@ -37,9 +30,8 @@ const Footer = () => {
 					<h3>Our Company</h3>
 				</div>
 				<div className="footer_item">
-					<Link to="/about">
-						<p>About Us</p>
-					</Link>
+					<p>About Us</p>
+
 					<p>Careers</p>
 					<p>Corporate Responsibility</p>
 					<p>Sustainability</p>
@@ -62,7 +54,7 @@ const Footer = () => {
 				</div>
 				<div className="footer_item">
 					<p>Oyarifa Niggas</p>
-					<p>📞 :(+233)553208841</p>
+					<p>📞 (+233)553208841</p>
 					<p>Mon - Sat(7:00 - 19:00)</p>
 				</div>
 			</Grid>

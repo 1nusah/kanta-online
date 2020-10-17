@@ -30,25 +30,35 @@ export default function Header() {
 			<AppBar position="fixed" style={{ backgroundColor: '#333333' }}>
 				<Toolbar className={classes.title}>
 					<Typography className="header_brand" variant="h6">
-						<Link to="/">
+						<Link to="/" className="header_link">
 							<Button>kanta</Button>
 						</Link>
 					</Typography>
 					<Typography variant="h5" className="header_row">
+						<Link className="header_link" to="/women">
+							<div className="header_button">
+								<Button>Women</Button>
+							</div>
+						</Link>
 						<div className="header_button">
-							<Button>Women</Button>
+							<Link className="header_link" to="/men">
+								<Button>Men</Button>
+							</Link>
 						</div>
 						<div className="header_button">
-							<Button>Men</Button>
+							<Link className="header_link" to="/children">
+								<Button>Children</Button>
+							</Link>
 						</div>
 						<div className="header_button">
-							<Button>Children</Button>
+							<Link className="header_link" to="/bags">
+								<Button>Bags</Button>
+							</Link>
 						</div>
 						<div className="header_button">
-							<Button>Bags</Button>
-						</div>
-						<div className="header_button">
-							<Button>Shoes</Button>
+							<Link className="header_link" to="/shoes">
+								<Button>Shoes</Button>
+							</Link>
 						</div>
 						<div
 							className="header_button"
@@ -59,9 +69,12 @@ export default function Header() {
 								style={{ color: '#adadad', borderBottomColor: '#adadad' }}
 							/>
 						</div>
-						<div className="header_button">
-							<LocalMallIcon style={{ color: '#adadad' }} />
-						</div>
+						<Link to="/checkout" className="header_link">
+							<div className="header_button">
+								<LocalMallIcon style={{ color: '#adadad' }} />
+								<sup style={{ fontSize: '10px' }}>0</sup>
+							</div>
+						</Link>
 					</Typography>
 				</Toolbar>
 			</AppBar>
