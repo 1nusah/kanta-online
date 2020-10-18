@@ -69,7 +69,7 @@ export default function Header() {
 								style={{ color: '#adadad', borderBottomColor: '#adadad' }}
 							/>
 						</div>
-						<Link to="/checkout" className="header_link">
+						<Link to="/cart" className="header_link">
 							<div className="header_button">
 								<LocalMallIcon style={{ color: '#adadad' }} />
 								<sup style={{ fontSize: '10px' }}>0</sup>

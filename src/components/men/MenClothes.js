@@ -3,6 +3,7 @@ import './MenClothes.css';
 import { Typography, Grid, Button } from '@material-ui/core';
 import Product from '../product/Product';
 import Footer from '../footer/Footer';
+import { products } from '../../assets/Basket';
 const Mens = () => {
 	return (
 		<Grid container className="men">
@@ -21,7 +22,9 @@ const Mens = () => {
 				<Button className="men_banner_items">hoodies</Button>
 				<Button className="men_banner_items">more</Button>
 			</Grid>
-			<Grid container></Grid>
+			<Grid container>
+				{products?.map((item) => item.images.map((it) => console.log(it.url)))}
+			</Grid>
 			<Footer />
 		</Grid>
 	);
