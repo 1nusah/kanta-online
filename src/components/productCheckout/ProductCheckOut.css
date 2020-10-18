@@ -1,0 +1,20 @@
+.productcheckout {
+	background-color: black;
+	color: #adadad;
+	padding: 5% 10% 10% 5%;
+}
+.productcheckout_details__ {
+	padding-right: 5%;
+}
+.productcheckout_description {
+	width: 70%;
+}
+.productcheckout_button {
+	/* background-color: inherit; */
+	border: 5px solid #adadad;
+	color: #adadad;
+	border-radius: 30px;
+	width: 200px;
+	text-align: center;
+	margin-top: 5%;
+}

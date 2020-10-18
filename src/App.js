@@ -38,10 +38,12 @@ function App() {
 					<h1>children</h1>
 				</Route>
 				<Route path="/checkout">
+					<Header />
 					<h1>Checkout</h1>
 					<Checkout />
 				</Route>
 				<Route path="/cart">
+					<Header />
 					<Cart />
 					<Footer />
 				</Route>
