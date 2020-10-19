@@ -2,6 +2,10 @@ import React from 'react';
 import { Grid, Button } from '@material-ui/core';
 import AL from '../../assets/images/alireza-esmaeeli-BGSZ1t80rpM-unsplash.jpg';
 import './ProductCheckOut.css';
+import Product1 from '../../assets/images/pexels-ashutosh-sonwani-1839564.jpg';
+import Product2 from '../../assets/images/pexels-ro-han-1693420.jpg';
+import Product3 from '../../assets/images/pexels-tnarg-2932748.jpg';
+import RelatedProduct from '../../components/product/RelatedProduct';
 const ProductCheckOut = () => {
 	return (
 		<Grid container className="productcheckout">
@@ -38,8 +42,12 @@ const ProductCheckOut = () => {
 			<Grid item xs={12} sm={12} md={6} lg={6}>
 				<img src={AL} alt="product " width="100%" height="auto" />
 			</Grid>
-			<Grid container justify="center" alignItems="center">
-				<Grid style={{ padding: '5% 10% 10px 10%', marginBottom: '10%' }}>
+			<Grid container>
+				<Grid
+					style={{
+						marginBottom: '10%',
+					}}
+				>
 					<div style={{ backgroundColor: '#333', marginBottom: '5px' }}>
 						<h5>PRODUCT DETAILS</h5>
 					</div>
@@ -66,6 +74,18 @@ const ProductCheckOut = () => {
 						<p>Closure: Slip on</p>
 					</div>
 				</Grid>
+			</Grid>
+			<Grid container>
+				<Grid item xs={12} md={12} sm={12} lg={12}>
+					<h3>Related Products</h3>
+				</Grid>
+				<RelatedProduct image={Product1} name="Odo Hoodie" price="$150" />
+				<RelatedProduct image={Product2} name="Levi's Hoodie" price="$150" />
+				<RelatedProduct
+					image={Product3}
+					name="True Religion Hoodie"
+					price="$150"
+				/>
 			</Grid>
 		</Grid>
 	);
