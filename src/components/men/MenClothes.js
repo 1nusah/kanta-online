@@ -1,6 +1,7 @@
 import React from 'react';
 import './MenClothes.css';
 import { Typography, Grid, Button } from '@material-ui/core';
+import axios from 'axios';
 import Product from '../product/Product';
 import Footer from '../footer/Footer';
 import { products } from '../../assets/Basket';

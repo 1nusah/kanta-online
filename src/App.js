@@ -36,11 +36,13 @@ function App() {
 				<Route path="/children">
 					<Header />
 					<h1>children</h1>
+					<Footer />
 				</Route>
 				<Route path="/checkout">
 					<Header />
 					<h1>Checkout</h1>
 					<Checkout />
+					<Footer />
 				</Route>
 				<Route path="/cart">
 					<Header />

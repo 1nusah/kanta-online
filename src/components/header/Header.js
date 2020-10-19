@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
 import TextField from '@material-ui/core/TextField';
+import { useStateValue } from '../../StateProvider';
 import './Header.css';
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -24,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header() {
 	const classes = useStyles();
-
+	const [{ basket }] = useStateValue();
+	console.log(basket);
 	return (
 		<div className="header" style={{ backgroundColor: '#fff' }}>
 			<AppBar position="fixed" style={{ backgroundColor: '#333333' }}>
@@ -72,7 +74,7 @@ export default function Header() {
 						<Link to="/cart" className="header_link">
 							<div className="header_button">
 								<LocalMallIcon style={{ color: '#adadad' }} />
-								<sup style={{ fontSize: '10px' }}>0</sup>
+								<sup style={{ fontSize: '10px' }}>{basket.length}</sup>
 							</div>
 						</Link>
 					</Typography>
