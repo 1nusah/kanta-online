@@ -1,17 +1,28 @@
 import React from 'react';
 import { Grid, Button } from '@material-ui/core';
-import AL from '../../assets/images/alireza-esmaeeli-BGSZ1t80rpM-unsplash.jpg';
+
 import './ProductCheckOut.css';
 import Product1 from '../../assets/images/pexels-ashutosh-sonwani-1839564.jpg';
 import Product2 from '../../assets/images/pexels-ro-han-1693420.jpg';
 import Product3 from '../../assets/images/pexels-tnarg-2932748.jpg';
 import RelatedProduct from '../../components/product/RelatedProduct';
+import { useStateValue } from '../../StateProvider';
+
 const ProductCheckOut = () => {
+	const [{ selectedItem }, dispatch] = useStateValue();
+	const [{ basket }] = useStateValue();
+	const addToBasket = () => {
+		// add item to basket ..
+		dispatch({
+			type: 'ADD_TO_BASKET',
+			item: selectedItem,
+		});
+	};
 	return (
 		<Grid container className="productcheckout">
 			<Grid item xs={12} sm={12} md={6} lg={6}>
 				<div className="productcheckout_details__">
-					<h1>Haban Hoodie</h1>
+					<h1>{selectedItem?.name}</h1>
 					<div className="productcheckout_ratings">
 						<span role="img" aria-label="rating">
 							⭐⭐⭐⭐⭐
@@ -19,30 +30,38 @@ const ProductCheckOut = () => {
 						<small>95 reviews</small>
 					</div>
 					<div className="productcheckout_price">
-						<h2>$95</h2>
+						<h2>{selectedItem?.price}</h2>
 					</div>
 					<div className="productcheckout_description">
 						<p>
 							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum
 							iure veritatis, enim, quisquam delectus sunt dolor laborum error
 							necessitatibus facilis accusamus debitis doloribus vel ad veniam
-							tempore qui possimus rem.Lorem ipsum dolor sit, amet consectetur
+							tempore qui possimus rem.
+							{/*Lorem ipsum dolor sit, amet consectetur
 							adipisicing elit. Nostrum iure veritatis, enim, quisquam delectus
 							sunt dolor laborum error necessitatibus facilis accusamus debitis
-							doloribus vel ad veniam tempore qui possimus rem.
+							doloribus vel ad veniam tempore qui possimus rem. */}
 						</p>
 					</div>
 				</div>
 				<Grid item xs={12} sm={12} md={12} lg={12}>
 					<div className="productcheckout_button">
-						<Button style={{ color: '#adadad' }}>Add to Cart</Button>
+						<Button style={{ color: '#adadad' }} onClick={addToBasket}>
+							Add to Cart
+						</Button>
 					</div>
 				</Grid>
 			</Grid>
 			<Grid item xs={12} sm={12} md={6} lg={6}>
-				<img src={AL} alt="product " width="100%" height="auto" />
+				<img
+					src={'https://' + selectedItem?.image}
+					alt="product "
+					width="70%"
+					height="500px"
+				/>
 			</Grid>
-			<Grid container>
+			<Grid container style={{ width: '87%' }}>
 				<Grid
 					style={{
 						marginBottom: '10%',
@@ -75,7 +94,7 @@ const ProductCheckOut = () => {
 					</div>
 				</Grid>
 			</Grid>
-			<Grid container>
+			<Grid container style={{ width: '87%' }}>
 				<Grid item xs={12} md={12} sm={12} lg={12}>
 					<h3>Related Products</h3>
 				</Grid>

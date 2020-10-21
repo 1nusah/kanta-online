@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import './MenClothes.css';
+// import './MenClothes.css';
 import { Typography, Grid, Button, CircularProgress } from '@material-ui/core';
 
 import axios from 'axios';
 import Product from '../product/Product';
-const Mens = () => {
-	const [menShirt, setmenShirt] = useState([]);
-	console.log('i am ', typeof menShirt);
-	console.log(menShirt);
+import Footer from '../footer/Footer';
+const Womens = () => {
+	const [women, setwomen] = useState([]);
+	console.log('i am ', typeof women);
+	console.log(women);
 	useEffect(() => {
 		var options = {
 			method: 'GET',
@@ -21,7 +22,7 @@ const Mens = () => {
 				currency: 'USD',
 				sort: 'freshness',
 				lang: 'en-US',
-				q: 'Men,Hoodie',
+				q: 'women',
 				sizeSchema: 'US',
 			},
 			headers: {
@@ -34,8 +35,8 @@ const Mens = () => {
 			.request(options)
 			.then(function (response) {
 				// console.log(response.data);
-				setmenShirt(response.data);
-				console.log(typeof menShirt);
+				setwomen(response.data);
+				console.log(typeof women);
 			})
 			.catch(function (error) {
 				console.error(error);
@@ -50,7 +51,7 @@ const Mens = () => {
 					variant="h3"
 					style={{ color: '#fff' }}
 				>
-					Men
+					Women
 				</Typography>
 				<Button className="men_banner_items">view all</Button>
 				<Button className="men_banner_items">casual</Button>
@@ -60,13 +61,13 @@ const Mens = () => {
 				<Button className="men_banner_items">more</Button>
 			</Grid>
 			<Grid container>
-				{menShirt.length === 0 ? (
-					<CircularProgress />
+				{women.length === 0 ? (
+					<CircularProgress style={{ color: '#adadad', textAlign: 'center' }} />
 				) : (
-					// Object.keys(menShirt).products.map((item) => console.log(item))
+					// Object.keys(women).products.map((item) => console.log(item))
 
-					// console.log(menShirt.products)
-					menShirt.products.map((item) => (
+					// console.log(women.products)
+					women.products.map((item) => (
 						<Product
 							id={item.id}
 							name={item.name}
@@ -80,4 +81,4 @@ const Mens = () => {
 	);
 };
 
-export default Mens;
+export default Womens;
