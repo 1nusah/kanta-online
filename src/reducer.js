@@ -35,6 +35,7 @@ export function reducer(state = initialState, action) {
 				...state,
 				selectedItem: action.items,
 			};
+
 		default:
 			return state;
 	}

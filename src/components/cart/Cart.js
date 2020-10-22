@@ -10,6 +10,7 @@ import { useStateValue } from '../../StateProvider';
 const Cart = () => {
 	const [{ basket }, dispatch] = useStateValue();
 	console.log('basket is ', typeof basket);
+	const mainTotal = 0;
 	console.log(basket);
 	return (
 		<Grid container className="cart">
@@ -32,11 +33,13 @@ const Cart = () => {
 						<Grid item xs={12} sm={12} md={3} lg={3}>
 							<h3>Product</h3>
 							<div style={{ display: 'flex', flexDirection: 'row' }}>
-								<img
-									src={'https://' + item.image}
-									height="150px"
-									width="200px"
-								/>
+								<div style={{ width: '200px', height: '150px' }}>
+									<img
+										src={'https://' + item.image}
+										height="auto"
+										width="100%"
+									/>
+								</div>
 								<p>{item.name}</p>
 							</div>
 						</Grid>
@@ -47,11 +50,11 @@ const Cart = () => {
 						<Grid item xs={12} sm={12} md={3} lg={3}>
 							<h3>Quantity</h3>
 							<div style={{ display: 'flex', flexDirection: 'row' }}>
-								<RemoveCircleIcon />
+								{/* <RemoveCircleIcon /> */}
 								<p style={{ marginRight: '5px', marginLeft: '5px' }}>
 									{item.quantity}
 								</p>
-								<AddCircleIcon />
+								{/* <AddCircleIcon /> */}
 							</div>
 						</Grid>
 						<Grid item xs={12} sm={12} md={3} lg={3}>
@@ -63,6 +66,11 @@ const Cart = () => {
 								<DeleteIcon style={{ marginLeft: '20px' }} />
 							</div>
 						</Grid>
+						{/* <Grid container>
+							<Grid item xs={12} sm={12} md={12} lg={12}>
+								<h4>Total</h4>
+							</Grid>
+						</Grid> */}
 					</Grid>
 				))
 			)}

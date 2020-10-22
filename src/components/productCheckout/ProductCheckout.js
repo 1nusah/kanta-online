@@ -38,10 +38,7 @@ const ProductCheckOut = () => {
 							iure veritatis, enim, quisquam delectus sunt dolor laborum error
 							necessitatibus facilis accusamus debitis doloribus vel ad veniam
 							tempore qui possimus rem.
-							{/*Lorem ipsum dolor sit, amet consectetur
-							adipisicing elit. Nostrum iure veritatis, enim, quisquam delectus
-							sunt dolor laborum error necessitatibus facilis accusamus debitis
-							doloribus vel ad veniam tempore qui possimus rem. */}
+						
 						</p>
 					</div>
 				</div>
