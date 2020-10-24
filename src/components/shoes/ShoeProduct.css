@@ -1,0 +1,21 @@
+.men_banner {
+	padding: 3% 10%;
+	display: flex;
+	flex-direction: row;
+}
+.men {
+	background-color: #000;
+	color: '#adadad';
+}
+.men_banner_brand {
+	color: #fff;
+	padding-right: 30%;
+}
+.men_banner_items {
+	color: #adadad;
+	padding-right: 10px;
+}
+.men Button {
+	color: #adadad;
+	text-transform: lowercase;
+}

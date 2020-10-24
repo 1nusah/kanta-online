@@ -11,6 +11,7 @@ import Checkout from './components/checkout/CheckOut';
 import Womens from './components/women/women';
 import ChildrenProducts from './components/children/ChildrenProducts';
 import BagProducts from './components/bags/BagProducts';
+import ShoeProducts from './components/shoes/ShoeProducts';
 function App() {
 	return (
 		<Router>
@@ -36,6 +37,7 @@ function App() {
 				<Route path="/shoes">
 					<Header />
 					<h1>shoes</h1>
+					<ShoeProducts />
 					<Footer />
 				</Route>
 				<Route path="/children">
