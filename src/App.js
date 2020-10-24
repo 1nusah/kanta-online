@@ -10,6 +10,7 @@ import ProductCheckOut from './components/productCheckout/ProductCheckout';
 import Checkout from './components/checkout/CheckOut';
 import Womens from './components/women/women';
 import ChildrenProducts from './components/children/ChildrenProducts';
+import BagProducts from './components/bags/BagProducts';
 function App() {
 	return (
 		<Router>
@@ -29,6 +30,7 @@ function App() {
 				<Route path="/bags">
 					<Header />
 					<h1>bags</h1>
+					<BagProducts />
 					<Footer />
 				</Route>
 				<Route path="/shoes">
