@@ -4,6 +4,7 @@ import { Grid, CircularProgress } from '@material-ui/core';
 import axios from 'axios';
 import Product from '../product/Product';
 import ClothesBanner from '../banner/ClothesBanner';
+import Loading from '../loading/loading';
 const Womens = () => {
 	const [women, setwomen] = useState([]);
 	console.log('i am ', typeof women);
@@ -46,7 +47,7 @@ const Womens = () => {
 			<ClothesBanner classification="women" />
 			<Grid container>
 				{women.length === 0 ? (
-					<CircularProgress style={{ color: '#adadad', textAlign: 'center' }} />
+					<Loading />
 				) : (
 					women.products.map((item) => (
 						<Product

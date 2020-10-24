@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './MenClothes.css';
-import { Typography, Grid, Button, CircularProgress } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 import axios from 'axios';
 import Product from '../product/Product';
 import ClothesBanner from '../banner/ClothesBanner';
+import Loading from '../loading/loading';
 const Mens = () => {
 	const [menShirt, setmenShirt] = useState([]);
 	console.log('i am ', typeof menShirt);
@@ -48,7 +49,7 @@ const Mens = () => {
 			<ClothesBanner classification="Men" />
 			<Grid container>
 				{menShirt.length === 0 ? (
-					<CircularProgress />
+					<Loading />
 				) : (
 					// Object.keys(menShirt).products.map((item) => console.log(item))
 
