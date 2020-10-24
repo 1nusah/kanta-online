@@ -6,7 +6,7 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useStateValue } from '../../StateProvider';
-
+import Ill from '../../assets/illustration/undraw_empty_cart_co35.svg';
 const Cart = () => {
 	const [{ basket }, dispatch] = useStateValue();
 	console.log('basket is ', typeof basket);
@@ -18,9 +18,19 @@ const Cart = () => {
 				<h1>Cart</h1>
 			</Grid>
 			{basket.length === 0 ? (
-				<Grid container>
-					<Grid item>
-						<h1>wassup</h1>
+				<Grid
+					container
+					justify="center"
+					alignItems="center"
+					style={{ textAlign: 'center' }}
+				>
+					<Grid item xs={12} sm={12} lg={12} md={12}>
+						<div style={{ height: '50vh' }}>
+							<img src={Ill} width="100%" height="100%" />
+						</div>
+						<div style={{ marginTop: '20px' }}>
+							<h1>Go shop and come back</h1>
+						</div>
 					</Grid>
 				</Grid>
 			) : (
