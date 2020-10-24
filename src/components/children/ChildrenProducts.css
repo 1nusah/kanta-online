@@ -1,0 +1,21 @@
+.children_products_banner {
+	padding: 3px 10px;
+	display: flex;
+	flex-direction: row;
+}
+.children_products {
+	background-color: #000;
+	color: '#adadad';
+}
+.children_products_banner_brand {
+	color: #fff;
+	padding-right: 30%;
+}
+.children_products_banner_items {
+	color: #adadad;
+	padding-right: 10px;
+}
+.children_products Button {
+	color: #adadad;
+	text-transform: lowercase;
+}

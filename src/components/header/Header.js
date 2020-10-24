@@ -66,15 +66,20 @@ export default function Header() {
 							className="header_button"
 							style={{ display: 'flex', textAlign: 'center' }}
 						>
-							<TextField />
-							<SearchIcon
-								style={{ color: '#adadad', borderBottomColor: '#adadad' }}
-							/>
+							<Button>
+								<SearchIcon
+									style={{ color: '#adadad', borderBottomColor: '#adadad' }}
+								/>
+							</Button>
 						</div>
 						<Link to="/cart" className="header_link">
 							<div className="header_button">
-								<LocalMallIcon style={{ color: '#adadad' }} />
-								<sup style={{ fontSize: '10px' }}>{basket.length}</sup>
+								<Button>
+									<LocalMallIcon style={{ color: '#adadad' }} />
+									<sup style={{ fontSize: '10px' }}>
+										{basket.length > 0 && basket.length}
+									</sup>
+								</Button>
 							</div>
 						</Link>
 					</Typography>
