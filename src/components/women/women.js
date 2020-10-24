@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-// import './MenClothes.css';
-import { Typography, Grid, Button, CircularProgress } from '@material-ui/core';
+import { Grid, CircularProgress } from '@material-ui/core';
 
 import axios from 'axios';
 import Product from '../product/Product';
-import Footer from '../footer/Footer';
-import Banner from '../banner/Banner';
+import ClothesBanner from '../banner/ClothesBanner';
 const Womens = () => {
 	const [women, setwomen] = useState([]);
 	console.log('i am ', typeof women);
@@ -35,7 +33,6 @@ const Womens = () => {
 		axios
 			.request(options)
 			.then(function (response) {
-				// console.log(response.data);
 				setwomen(response.data);
 				console.log(typeof women);
 			})
@@ -46,7 +43,7 @@ const Womens = () => {
 
 	return (
 		<Grid container className="men">
-			<Banner classification="women" />
+			<ClothesBanner classification="women" />
 			<Grid container>
 				{women.length === 0 ? (
 					<CircularProgress style={{ color: '#adadad', textAlign: 'center' }} />

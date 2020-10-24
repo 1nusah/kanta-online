@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Grid, Button, CircularProgress } from '@material-ui/core';
-const Banner = ({ classification }) => {
+const ClothesBanner = ({ classification }) => {
 	return (
 		<Grid container>
 			<Grid item xs={12} md={12} sm={12} lg={12} className="men_banner">
@@ -22,4 +22,4 @@ const Banner = ({ classification }) => {
 	);
 };
 
-export default Banner;
+export default ClothesBanner;

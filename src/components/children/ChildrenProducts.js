@@ -1,11 +1,11 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-// import Banner from '../banner/Banner';
+import ClotehesBanner from '../banner/ClothesBanner';
 import './ChildrenProducts.css';
 const ChildrenProducts = () => {
 	return (
-		<Grid container clasName="product_page">
-			{/* <Banner classification="Children" /> */}
+		<Grid container className="men">
+			<ClotehesBanner classification="Children" />
 		</Grid>
 	);
 };

@@ -4,7 +4,7 @@ import { Typography, Grid, Button, CircularProgress } from '@material-ui/core';
 
 import axios from 'axios';
 import Product from '../product/Product';
-import Banner from '../banner/Banner';
+import ClothesBanner from '../banner/ClothesBanner';
 const Mens = () => {
 	const [menShirt, setmenShirt] = useState([]);
 	console.log('i am ', typeof menShirt);
@@ -45,7 +45,7 @@ const Mens = () => {
 
 	return (
 		<Grid container className="men">
-			<Banner classification="Men" />
+			<ClothesBanner classification="Men" />
 			<Grid container>
 				{menShirt.length === 0 ? (
 					<CircularProgress />
