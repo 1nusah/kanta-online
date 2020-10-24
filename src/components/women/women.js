@@ -5,6 +5,7 @@ import { Typography, Grid, Button, CircularProgress } from '@material-ui/core';
 import axios from 'axios';
 import Product from '../product/Product';
 import Footer from '../footer/Footer';
+import Banner from '../banner/Banner';
 const Womens = () => {
 	const [women, setwomen] = useState([]);
 	console.log('i am ', typeof women);
@@ -45,28 +46,11 @@ const Womens = () => {
 
 	return (
 		<Grid container className="men">
-			<Grid item xs={12} md={12} sm={12} lg={12} className="men_banner">
-				<Typography
-					className="men_banner_brand"
-					variant="h3"
-					style={{ color: '#fff' }}
-				>
-					Women
-				</Typography>
-				<Button className="men_banner_items">view all</Button>
-				<Button className="men_banner_items">casual</Button>
-				<Button className="men_banner_items">shirts</Button>
-				<Button className="men_banner_items">trousers</Button>
-				<Button className="men_banner_items">hoodies</Button>
-				<Button className="men_banner_items">more</Button>
-			</Grid>
+			<Banner classification="women" />
 			<Grid container>
 				{women.length === 0 ? (
 					<CircularProgress style={{ color: '#adadad', textAlign: 'center' }} />
 				) : (
-					// Object.keys(women).products.map((item) => console.log(item))
-
-					// console.log(women.products)
 					women.products.map((item) => (
 						<Product
 							id={item.id}
