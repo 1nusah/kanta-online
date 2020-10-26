@@ -12,6 +12,7 @@ import Womens from './components/women/women';
 import ChildrenProducts from './components/children/ChildrenProducts';
 import BagProducts from './components/bags/BagProducts';
 import ShoeProducts from './components/shoes/ShoeProducts';
+import OrderSuccess from './components/orderPage/OrderSuccess';
 function App() {
 	return (
 		<Router>
@@ -20,6 +21,11 @@ function App() {
 					<Header />
 					<h1>Men</h1>
 					<Mens />
+					<Footer />
+				</Route>
+				<Route path="/success">
+					<Header />
+					<OrderSuccess />
 					<Footer />
 				</Route>
 				<Route path="/women">
