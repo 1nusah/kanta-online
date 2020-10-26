@@ -1,0 +1,12 @@
+.checkout_container {
+	background-color: black;
+	color: #fff;
+	padding: 5% 3%;
+}
+.checkout_header {
+	padding-bottom: 2%;
+}
+.text_field {
+	background-color: #333;
+	color: #fff;
+}

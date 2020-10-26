@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
+import CancelIcon from '@material-ui/icons/Cancel';
 import TextField from '@material-ui/core/TextField';
 import { useStateValue } from '../../StateProvider';
 import './Header.css';
@@ -26,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Header() {
 	const classes = useStyles();
 	const [{ basket }] = useStateValue();
+	const [searchBool, setsearchBool] = useState(true);
 	console.log(basket);
 	return (
 		<div className="header" style={{ backgroundColor: '#fff' }}>
@@ -66,11 +68,27 @@ export default function Header() {
 							className="header_button"
 							style={{ display: 'flex', textAlign: 'center' }}
 						>
-							<Button>
-								<SearchIcon
-									style={{ color: '#adadad', borderBottomColor: '#adadad' }}
-								/>
-							</Button>
+							{!searchBool && <TextField />}
+							{searchBool && (
+								<Button>
+									<SearchIcon
+										style={{ color: '#adadad', borderBottomColor: '#adadad' }}
+										onClick={() => {
+											setsearchBool(!searchBool);
+										}}
+									/>
+								</Button>
+							)}
+							{!searchBool && (
+								<Button>
+									<CancelIcon
+										style={{ color: '#adadad', borderBottomColor: '#adadad' }}
+										onClick={() => {
+											setsearchBool(!searchBool);
+										}}
+									/>
+								</Button>
+							)}
 						</div>
 						<Link to="/cart" className="header_link">
 							<div className="header_button">

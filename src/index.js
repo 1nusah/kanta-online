@@ -5,10 +5,24 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { StateProvider } from './StateProvider';
 import { initialState, reducer } from './reducer';
+import { ThemeProvider } from '@material-ui/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
+const customTheme = createMuiTheme({
+	overrides: {
+		MuiFormLabel: {
+			root: {
+				color: '#adadad',
+			},
+			color: '#fff',
+		},
+	},
+});
 ReactDOM.render(
 	<React.StrictMode>
 		<StateProvider initialState={initialState} reducer={reducer}>
-			<App />
+			<ThemeProvider theme={customTheme}>
+				<App />
+			</ThemeProvider>
 		</StateProvider>
 	</React.StrictMode>,
 	document.getElementById('root')
