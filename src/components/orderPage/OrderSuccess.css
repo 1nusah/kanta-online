@@ -1,4 +1,7 @@
 .success {
 	background-color: black;
 	color: #adadad;
+	text-align: center;
+	padding-top: 5%;
+	padding-bottom: 5%;
 }

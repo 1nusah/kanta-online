@@ -10,7 +10,6 @@ import {
 	FormControlLabel,
 	Button,
 } from '@material-ui/core';
-import swal from 'sweetalert';
 const Checkout = () => {
 	return (
 		<Grid container className="checkout_container">
@@ -167,14 +166,6 @@ const Checkout = () => {
 							<Button
 								variant="contained"
 								style={{ backgroundColor: 'inherit', color: '#adadad' }}
-								onClick={() => {
-									swal({
-										title: 'Your order is successful!',
-										text: 'Thank you!',
-										icon: 'success',
-										width: '800px',
-									});
-								}}
 							>
 								Place Order
 							</Button>
