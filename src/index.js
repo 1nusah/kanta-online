@@ -12,8 +12,14 @@ const customTheme = createMuiTheme({
 		MuiFormLabel: {
 			root: {
 				color: '#adadad',
+				'&$focused$notchedOutline': {
+					borderColor: 'orange',
+				},
 			},
 			color: '#fff',
+		},
+		MuiFocused: {
+			borderColor: 'red',
 		},
 	},
 });

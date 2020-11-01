@@ -13,13 +13,43 @@ import {
 import { Link } from 'react-router-dom';
 const Checkout = () => {
 	const [userDetails, setuserDetails] = useState([]);
-	// const handleChange = (name) => ({ target: { value } }) => {
-	// 	setuserDetails(...userDetails, { name: value });
-	// 	console.log(userDetails);
-	// };
-	const handleChange = (name) => {
-		console.log('name is ',name);
+	const handleFirstName = (e) => {
+		setuserDetails([...userDetails, { firstName: e.target.value }]);
+		console.log(userDetails);
 	};
+	const handleLastName = (e) => {
+		setuserDetails([...userDetails, { lastName: e.target.value }]);
+		console.log(userDetails);
+	};
+	const handleCompanyName = (e) => {
+		setuserDetails([...userDetails, { company: e.target.value }]);
+		console.log(userDetails);
+	};
+	const handleCountry = (e) => {
+		setuserDetails([...userDetails, { country: e.target.value }]);
+		console.log(userDetails);
+	};
+	const handleTown = (e) => {
+		setuserDetails([...userDetails, { town: e.target.value }]);
+		console.log(userDetails);
+	};
+	const handleStreet = (e) => {
+		setuserDetails([...userDetails, { street: e.target.value }]);
+		console.log(userDetails);
+	};
+	const handleZip = (e) => {
+		setuserDetails([...userDetails, { zip: e.target.value }]);
+		console.log(userDetails);
+	};
+	const handlePhone = (e) => {
+		setuserDetails([...userDetails, { phone: e.target.value }]);
+		console.log(userDetails);
+	};
+	const handleCity = (e) => {
+		setuserDetails([...userDetails, { city: e.target.value }]);
+		console.log(userDetails);
+	};
+
 	return (
 		<Grid container className="checkout_container">
 			<Grid item xs={12} sm={12} md={12} lg={12} className="checkout_header">
@@ -32,21 +62,21 @@ const Checkout = () => {
 							label="First Name"
 							variant="filled"
 							className="text_field"
-							value={userDetails.firstName}
+							name="firstName"
 							style={{
 								width: '45%',
 								marginRight: '10%',
+								borderColor: '#f00',
 							}}
 							size="medium"
-							onChange={handleChange('firstName')}
+							onChange={handleFirstName}
 						/>
 						<TextField
 							label="Last Name"
 							variant="filled"
-							value={userDetails.lastName}
 							className="text_field"
 							style={{ width: '45%' }}
-							onChange={handleChange('lastName')}
+							onChange={handleLastName}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -55,8 +85,7 @@ const Checkout = () => {
 							variant="filled"
 							className="text_field"
 							fullWidth
-							value={userDetails.companyName}
-							onChange={handleChange('companyName')}
+							onChange={handleCompanyName}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -65,18 +94,16 @@ const Checkout = () => {
 							variant="filled"
 							className="text_field"
 							fullWidth
-							value={userDetails.country}
-							onChange={handleChange('country')}
+							onChange={handleCountry}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
 						<TextField
-							label="City/Town"
+							label="City"
 							fullWidth
 							variant="filled"
 							className="text_field"
-							value={userDetails.city}
-							onChange={handleChange('city')}
+							onChange={handleCity}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -85,8 +112,7 @@ const Checkout = () => {
 							variant="filled"
 							fullWidth
 							className="text_field"
-							value={userDetails.town}
-							onChange={handleChange('town')}
+							onChange={handleTown}
 						/>
 					</div>
 
@@ -94,10 +120,10 @@ const Checkout = () => {
 						<TextField
 							label="Zip Code"
 							fullWidth
+							type="number"
 							variant="filled"
-							value={userDetails.zip}
 							className="text_field"
-							onChange={handleChange('zip')}
+							onChange={handleZip}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -106,19 +132,10 @@ const Checkout = () => {
 							variant="filled"
 							className="text_field"
 							fullWidth
-							value={userDetails.phone}
-							onChange={handleChange('phone')}
+							type="number"
+							onChange={handlePhone}
 						/>
 					</div>
-					{/* <div style={{ marginBottom: '20px' }}>
-						<TextField
-							label="City/Town"
-							fullWidth
-							variant="filled"
-							className="text_field"
-							onChange={handleChange('phone')}
-						/>
-					</div> */}
 				</Grid>
 				<Grid item xs={12} sm={12} md={6} lg={6}>
 					<div

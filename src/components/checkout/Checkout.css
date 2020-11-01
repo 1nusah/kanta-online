@@ -10,6 +10,9 @@
 	background-color: #333;
 	color: #fff;
 }
+.text_field :focus {
+	color: '#f00';
+}
 .sweet-alert {
 	background-color: #000;
 	color: #adadad;
