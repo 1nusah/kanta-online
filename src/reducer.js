@@ -35,7 +35,11 @@ export function reducer(state = initialState, action) {
 				...state,
 				selectedItem: action.items,
 			};
-
+		case 'CONFIRM_USER_DETAILS':
+			return {
+				...state,
+				userDetails: action.userDeets,
+			};
 		default:
 			return state;
 	}

@@ -11,8 +11,12 @@ import {
 	Button,
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { useStateValue } from '../../StateProvider';
+
 const Checkout = () => {
 	const [userDetails, setuserDetails] = useState([]);
+	const [{ userDeets }, dispatch] = useStateValue();
+
 	const handleFirstName = (e) => {
 		setuserDetails([...userDetails, { firstName: e.target.value }]);
 		console.log(userDetails);
@@ -49,7 +53,12 @@ const Checkout = () => {
 		setuserDetails([...userDetails, { city: e.target.value }]);
 		console.log(userDetails);
 	};
-
+	const confirmDeets = () => {
+		dispatch({
+			type: 'CONFIRM_USER_DETAILS',
+			userDeets: userDetails,
+		});
+	};
 	return (
 		<Grid container className="checkout_container">
 			<Grid item xs={12} sm={12} md={12} lg={12} className="checkout_header">
@@ -228,6 +237,7 @@ const Checkout = () => {
 								<Button
 									variant="contained"
 									style={{ backgroundColor: 'inherit', color: '#adadad' }}
+									onClick={confirmDeets}
 								>
 									Place Order
 								</Button>
