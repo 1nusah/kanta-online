@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Checkout.css';
 import {
 	Grid,
@@ -10,7 +10,16 @@ import {
 	FormControlLabel,
 	Button,
 } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 const Checkout = () => {
+	const [userDetails, setuserDetails] = useState([]);
+	// const handleChange = (name) => ({ target: { value } }) => {
+	// 	setuserDetails(...userDetails, { name: value });
+	// 	console.log(userDetails);
+	// };
+	const handleChange = (name) => {
+		console.log('name is ',name);
+	};
 	return (
 		<Grid container className="checkout_container">
 			<Grid item xs={12} sm={12} md={12} lg={12} className="checkout_header">
@@ -23,17 +32,21 @@ const Checkout = () => {
 							label="First Name"
 							variant="filled"
 							className="text_field"
+							value={userDetails.firstName}
 							style={{
 								width: '45%',
 								marginRight: '10%',
 							}}
 							size="medium"
+							onChange={handleChange('firstName')}
 						/>
 						<TextField
 							label="Last Name"
 							variant="filled"
+							value={userDetails.lastName}
 							className="text_field"
 							style={{ width: '45%' }}
+							onChange={handleChange('lastName')}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -42,6 +55,8 @@ const Checkout = () => {
 							variant="filled"
 							className="text_field"
 							fullWidth
+							value={userDetails.companyName}
+							onChange={handleChange('companyName')}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -50,14 +65,8 @@ const Checkout = () => {
 							variant="filled"
 							className="text_field"
 							fullWidth
-						/>
-					</div>
-					<div style={{ marginBottom: '20px' }}>
-						<TextField
-							label="Street Address"
-							variant="filled"
-							fullWidth
-							className="text_field"
+							value={userDetails.country}
+							onChange={handleChange('country')}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -66,14 +75,29 @@ const Checkout = () => {
 							fullWidth
 							variant="filled"
 							className="text_field"
+							value={userDetails.city}
+							onChange={handleChange('city')}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
 						<TextField
-							label="Country"
+							label="Town"
+							variant="filled"
+							fullWidth
+							className="text_field"
+							value={userDetails.town}
+							onChange={handleChange('town')}
+						/>
+					</div>
+
+					<div style={{ marginBottom: '20px' }}>
+						<TextField
+							label="Zip Code"
 							fullWidth
 							variant="filled"
+							value={userDetails.zip}
 							className="text_field"
+							onChange={handleChange('zip')}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -82,8 +106,19 @@ const Checkout = () => {
 							variant="filled"
 							className="text_field"
 							fullWidth
+							value={userDetails.phone}
+							onChange={handleChange('phone')}
 						/>
 					</div>
+					{/* <div style={{ marginBottom: '20px' }}>
+						<TextField
+							label="City/Town"
+							fullWidth
+							variant="filled"
+							className="text_field"
+							onChange={handleChange('phone')}
+						/>
+					</div> */}
 				</Grid>
 				<Grid item xs={12} sm={12} md={6} lg={6}>
 					<div
@@ -163,12 +198,14 @@ const Checkout = () => {
 							</RadioGroup>
 						</FormControl>
 						<div style={{ textAlign: 'center' }}>
-							<Button
-								variant="contained"
-								style={{ backgroundColor: 'inherit', color: '#adadad' }}
-							>
-								Place Order
-							</Button>
+							<Link to="/success">
+								<Button
+									variant="contained"
+									style={{ backgroundColor: 'inherit', color: '#adadad' }}
+								>
+									Place Order
+								</Button>
+							</Link>
 						</div>
 					</div>
 				</Grid>
