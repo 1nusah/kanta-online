@@ -115,6 +115,15 @@ const Checkout = () => {
 							onChange={handleTown}
 						/>
 					</div>
+					<div style={{ marginBottom: '20px' }}>
+						<TextField
+							label="Street"
+							variant="filled"
+							fullWidth
+							className="text_field"
+							onChange={handleStreet}
+						/>
+					</div>
 
 					<div style={{ marginBottom: '20px' }}>
 						<TextField
