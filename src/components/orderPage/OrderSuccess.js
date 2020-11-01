@@ -4,6 +4,7 @@ import './OrderSuccess.css';
 // import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import DoneIcon from '@material-ui/icons/Done';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 const OrderSuccess = () => {
 	return (
 		<Grid container justify="center" alignItems="center">
@@ -25,17 +26,19 @@ const OrderSuccess = () => {
 						</p>
 					</div>
 					<div style={{ paddingTop: '5%' }}>
-						<Button
-							variant="contained"
-							style={{
-								backgroundColor: 'inherit',
-								color: '#adadad',
-								border: '2px solid #adadad',
-								borderRadius: 25,
-							}}
-						>
-							Return Shopping
-						</Button>
+						<Link to="/" style={{ textDecoration: 'none' }}>
+							<Button
+								variant="contained"
+								style={{
+									backgroundColor: 'inherit',
+									color: '#adadad',
+									border: '2px solid #adadad',
+									borderRadius: 25,
+								}}
+							>
+								Return Shopping
+							</Button>
+						</Link>
 					</div>
 				</Grid>
 			</Grid>

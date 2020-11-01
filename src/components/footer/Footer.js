@@ -53,8 +53,8 @@ const Footer = () => {
 					<h3>Kanta Online</h3>
 				</div>
 				<div className="footer_item">
-					<p>Oyarifa Niggas</p>
-					<p>📞 (+233)553208841</p>
+					<p>Oyarifa Boys</p>
+					<p>📞:(+233)553208841</p>
 					<p>Mon - Sat(7:00 - 19:00)</p>
 				</div>
 			</Grid>
