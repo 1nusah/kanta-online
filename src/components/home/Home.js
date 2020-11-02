@@ -14,47 +14,50 @@ function Home() {
 	return (
 		<div className="home">
 			<div className="home_button">
-				<Button
-					variant="contained"
-					style={{
-						backgroundColor: 'inherit',
-						color: '#fff',
-						border: '2px solid #fff',
-						borderRadius: 30,
-					}}
-				>
-					SHOP NOW
-				</Button>
+				<Link to="/shop" className="header_link">
+					<Button
+						variant="contained"
+						style={{
+							backgroundColor: 'inherit',
+							color: '#fff',
+							border: '2px solid #fff',
+							borderRadius: 30,
+						}}
+					>
+						SHOP NOW
+					</Button>
+				</Link>
 			</div>
 			<div className="images">
 				<div className="images_women">
-					{/* <Typography style={{ color: '#fff' }} variant="h5">
-						Women's Collection
-					</Typography> */}
-					<Button
-						variant="contained"
-						style={{
-							backgroundColor: 'inherit',
-							color: '#fff',
-							border: '2px solid #fff',
-							borderRadius: 30,
-						}}
-					>
-						SHOP NOW
-					</Button>
+					<Link to="/shop" className="header_link">
+						<Button
+							variant="contained"
+							style={{
+								backgroundColor: 'inherit',
+								color: '#fff',
+								border: '2px solid #fff',
+								borderRadius: 30,
+							}}
+						>
+							SHOP NOW
+						</Button>
+					</Link>
 				</div>
 				<div className="images_casual_wear">
-					<Button
-						variant="contained"
-						style={{
-							backgroundColor: 'inherit',
-							color: '#fff',
-							border: '2px solid #fff',
-							borderRadius: 30,
-						}}
-					>
-						SHOP NOW
-					</Button>
+					<Link to="/shop" className="header_link">
+						<Button
+							variant="contained"
+							style={{
+								backgroundColor: 'inherit',
+								color: '#fff',
+								border: '2px solid #fff',
+								borderRadius: 30,
+							}}
+						>
+							SHOP NOW
+						</Button>
+					</Link>
 				</div>
 			</div>
 			<Grid container style={{ borderTop: '5px solid #000' }}>

@@ -48,32 +48,7 @@
 .images > Typography {
 	color: #fff;
 }
-/* .outdoor {
-	background-image: url('../../assets/images/outdoor.jpg');
-	height: 100vh;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+Link {
+	text-decoration: none;
+	text-decoration-line: none;
 }
-.classic {
-	background-image: url('../../assets/images/toni-hukkanen-lO-p5nHKSVQ-unsplash.jpg');
-	height: 100vh;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-.summer {
-	background-image: url('../../assets/images/junko-nakase-Q-72wa9-7Dg-unsplash.jpg');
-	height: 100vh;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-.floral {
-	background-image: url('../../assets/images/laura-d-vargas-7AbaE-DDBd8-unsplash.jpg');
-	height: 100vh;
-	width: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-} */
