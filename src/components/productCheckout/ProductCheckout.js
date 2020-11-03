@@ -38,7 +38,6 @@ const ProductCheckOut = () => {
 							iure veritatis, enim, quisquam delectus sunt dolor laborum error
 							necessitatibus facilis accusamus debitis doloribus vel ad veniam
 							tempore qui possimus rem.
-						
 						</p>
 					</div>
 				</div>
@@ -69,10 +68,11 @@ const ProductCheckOut = () => {
 					</div>
 					<div style={{ backgroundColor: '#333' }}>
 						<p style={{ wordSpacing: 2 }}>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-							minima animi voluptas ducimus reprehenderit beatae consectetur
-							esse. Eaque doloremque omnis laborum quo dignissimos molestias hic
-							recusandae ab, debitis, suscipit sit.
+							Kanta-Online brings you exquisite, genuine items and this produvts
+							is no exception. Ranging from the finest cotton to the finest
+							stitch, all our decisions are how to design and make a product
+							that stays with you for a millenium and can be passed down to
+							generations
 						</p>
 					</div>
 					<div style={{ backgroundColor: '#333', marginTop: '40px' }}>

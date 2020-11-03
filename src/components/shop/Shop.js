@@ -20,7 +20,7 @@ const Shop = () => {
 				currency: 'USD',
 				sort: 'freshness',
 				lang: 'en-US',
-				q: 'shirt,women',
+				q: 'shirt,women,men,child',
 				sizeSchema: 'US',
 			},
 			headers: {
