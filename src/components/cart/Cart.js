@@ -9,11 +9,18 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { useStateValue } from '../../StateProvider';
 import Ill from '../../assets/illustration/undraw_empty_cart_co35.svg';
 
-const Cart = () => {
+const Cart = ({ id }) => {
 	const [{ basket }, dispatch] = useStateValue();
 	console.log('basket is ', typeof basket);
 	const mainTotal = 0;
 	console.log(basket);
+	const removeFromBasket = () => {
+		//to remove the item from the baskets
+		dispatch({
+			type: 'REMOVE_FROM_BASKET',
+			id,
+		});
+	};
 	return (
 		<Grid container className="cart">
 			<Grid item xs={12} sm={12} lg={12} md={12}>
@@ -57,7 +64,7 @@ const Cart = () => {
 						</Grid>
 						{basket.map((item) => (
 							<Grid container>
-								<Grid item xs={12} sm={12} md={3} lg={3}>
+								<Grid item xs={12} sm={12} md={3} lg={3} key={item.id}>
 									<div style={{ display: 'flex', flexDirection: 'row' }}>
 										<div style={{ width: '150px', height: '150px' }}>
 											<img
@@ -86,7 +93,10 @@ const Cart = () => {
 										<p style={{ marginRight: '5px', marginLeft: '5px' }}>
 											${item.quantity * item.price.substring(1)}
 										</p>
-										<DeleteIcon style={{ marginLeft: '20px' }} />
+										<DeleteIcon
+											onClick={removeFromBasket}
+											style={{ marginLeft: '20px' }}
+										/>
 									</div>
 								</Grid>
 							</Grid>

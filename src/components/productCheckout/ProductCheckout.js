@@ -94,7 +94,7 @@ const ProductCheckOut = () => {
 				<Grid item xs={12} md={12} sm={12} lg={12}>
 					<h3>Related Products</h3>
 				</Grid>
-				<RelatedProducts categoryOfProducts="men" />
+				{/* <RelatedProducts categoryOfProducts="men" /> */}
 			</Grid>
 		</Grid>
 	);
