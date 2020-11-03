@@ -1,6 +1,6 @@
 .product {
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 	padding-top: 15px;
 }
 .product_price {
@@ -9,6 +9,7 @@
 	width: 70px;
 	font-size: 12px;
 	text-align: center;
+	margin-bottom: 10px;
 }
 .product_name {
 	color: #adadad;
