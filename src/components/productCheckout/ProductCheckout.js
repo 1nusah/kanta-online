@@ -2,11 +2,9 @@ import React from 'react';
 import { Grid, Button } from '@material-ui/core';
 
 import './ProductCheckOut.css';
-import Product1 from '../../assets/images/pexels-ashutosh-sonwani-1839564.jpg';
-import Product2 from '../../assets/images/pexels-ro-han-1693420.jpg';
-import Product3 from '../../assets/images/pexels-tnarg-2932748.jpg';
-import RelatedProduct from '../../components/product/RelatedProduct';
+
 import { useStateValue } from '../../StateProvider';
+import RelatedProducts from '../product/RelatedProducts';
 
 const ProductCheckOut = () => {
 	const [{ selectedItem }, dispatch] = useStateValue();
@@ -91,17 +89,12 @@ const ProductCheckOut = () => {
 					</div>
 				</Grid>
 			</Grid>
+
 			<Grid container style={{ width: '87%' }}>
 				<Grid item xs={12} md={12} sm={12} lg={12}>
 					<h3>Related Products</h3>
 				</Grid>
-				<RelatedProduct image={Product1} name="Odo Hoodie" price="$150" />
-				<RelatedProduct image={Product2} name="Levi's Hoodie" price="$150" />
-				<RelatedProduct
-					image={Product3}
-					name="True Religion Hoodie"
-					price="$150"
-				/>
+				<RelatedProducts categoryOfProducts="men" />
 			</Grid>
 		</Grid>
 	);

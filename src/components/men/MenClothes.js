@@ -51,9 +51,6 @@ const Mens = () => {
 				{menShirt.length === 0 ? (
 					<Loading />
 				) : (
-					// Object.keys(menShirt).products.map((item) => console.log(item))
-
-					// console.log(menShirt.products)
 					menShirt.products.map((item) => (
 						<Product
 							id={item.id}

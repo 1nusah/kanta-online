@@ -2,12 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import Button from '@material-ui/core/Button';
-import { Typography, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Floral from '../../assets/images/toni-hukkanen-lO-p5nHKSVQ-unsplash.jpg';
-import Outdoor from '../../assets/images/outdoor.jpg';
-import Summer from '../../assets/images/junko-nakase-Q-72wa9-7Dg-unsplash.jpg';
+
 import Classic from '../../assets/images/laura-d-vargas-7AbaE-DDBd8-unsplash.jpg';
-import Floral1 from '../../assets/images/pexels-anna-shvets-3746226.jpg';
+
 import Outdoor1 from '../../assets/images/pexels-vova-krasilnikov-2698844.jpg';
 import Vintage from '../../assets/images/pexels-chloe-kala-1043473.jpg';
 function Home() {
