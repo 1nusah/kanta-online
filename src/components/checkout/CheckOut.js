@@ -16,7 +16,7 @@ import { useStateValue } from '../../StateProvider';
 
 const Checkout = () => {
 	const [userDetails, setuserDetails] = useState([]);
-	const [{ userDeets }, dispatch] = useStateValue();
+	const [{ userDeets }, dispatch] = useStateValue([]);
 	const [value, setValue] = useState('');
 	const handleChange = (event) => {
 		setValue([...userDetails, { paymentOption: event.target.value }]);
@@ -25,8 +25,9 @@ const Checkout = () => {
 	const handleDeets = (event) => {
 		const target = event.target;
 		const name = target.name;
-		setuserDetails([...userDetails, { [name]: value }]);
+		setuserDetails([...userDetails, { [name]: target.value }]);
 		console.log(userDetails);
+		console.log(name);
 	};
 	const confirmDeets = () => {
 		dispatch({
@@ -54,7 +55,7 @@ const Checkout = () => {
 								borderColor: '#f00',
 							}}
 							size="medium"
-							// onChange={handleDeets}
+							onChange={handleDeets}
 						/>
 						<TextField
 							label="Last Name"
@@ -62,7 +63,7 @@ const Checkout = () => {
 							className="text_field"
 							style={{ width: '45%' }}
 							name="lastName"
-							// onChange={handleLastName}
+							onChange={handleDeets}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -72,7 +73,7 @@ const Checkout = () => {
 							className="text_field"
 							fullWidth
 							name="companyName"
-							// onChange={handleCompanyName}
+							onChange={handleDeets}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -82,7 +83,7 @@ const Checkout = () => {
 							className="text_field"
 							fullWidth
 							name="country"
-							// onChange={handleCountry}
+							onChange={handleDeets}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -91,7 +92,7 @@ const Checkout = () => {
 							fullWidth
 							variant="filled"
 							className="text_field"
-							// onChange={handleCity}
+							onChange={handleDeets}
 							name="city"
 						/>
 					</div>
@@ -102,7 +103,7 @@ const Checkout = () => {
 							fullWidth
 							className="text_field"
 							name="town"
-							// onChange={handleTown}
+							onChange={handleDeets}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -112,7 +113,7 @@ const Checkout = () => {
 							fullWidth
 							name="street"
 							className="text_field"
-							// onChange={handleStreet}
+							onChange={handleDeets}
 						/>
 					</div>
 
@@ -123,7 +124,7 @@ const Checkout = () => {
 							variant="filled"
 							name="zip"
 							className="text_field"
-							// onChange={handleZip}
+							onChange={handleDeets}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -134,7 +135,7 @@ const Checkout = () => {
 							fullWidth
 							name="phone"
 							type="number"
-							// onChange={handlePhone}
+							onChange={handleDeets}
 						/>
 					</div>
 				</Grid>
@@ -192,7 +193,7 @@ const Checkout = () => {
 							<p style={{ color: '#fff' }}>$750</p>
 						</div>
 						<FormControl component="fieldset">
-							<RadioGroup onChange={handleDeets}>
+							<RadioGroup onChange={handleChange} name="paymentOptions">
 								<FormControlLabel
 									value="Direct Bank Transfer"
 									label="Direct Bank Transfer"
