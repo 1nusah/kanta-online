@@ -14,7 +14,7 @@ const Cart = ({ id }) => {
 	console.log('basket is ', typeof basket);
 	const mainTotal = 0;
 	console.log(basket);
-	const removeFromBasket = () => {
+	const removeFromBasket = (id) => {
 		//to remove the item from the baskets
 		dispatch({
 			type: 'REMOVE_FROM_BASKET',
@@ -94,8 +94,9 @@ const Cart = ({ id }) => {
 											${item.quantity * item.price.substring(1)}
 										</p>
 										<DeleteIcon
-											onClick={removeFromBasket}
+											onClick={() => removeFromBasket(item.id)}
 											style={{ marginLeft: '20px' }}
+											className="delete"
 										/>
 									</div>
 								</Grid>
