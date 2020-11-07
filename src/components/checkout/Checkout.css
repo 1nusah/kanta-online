@@ -12,6 +12,7 @@
 }
 .text_field :focus {
 	color: '#f00';
+	outline: none;
 }
 .sweet-alert {
 	background-color: #000;

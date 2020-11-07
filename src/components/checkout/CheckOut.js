@@ -10,47 +10,22 @@ import {
 	FormControlLabel,
 	Button,
 } from '@material-ui/core';
+import { CssTextField } from '../input';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../../StateProvider';
 
 const Checkout = () => {
 	const [userDetails, setuserDetails] = useState([]);
 	const [{ userDeets }, dispatch] = useStateValue();
-
-	const handleFirstName = (e) => {
-		setuserDetails([...userDetails, { firstName: e.target.value }]);
-		console.log(userDetails);
+	const [value, setValue] = useState('');
+	const handleChange = (event) => {
+		setValue([...userDetails, { paymentOption: event.target.value }]);
+		console.log(value);
 	};
-	const handleLastName = (e) => {
-		setuserDetails([...userDetails, { lastName: e.target.value }]);
-		console.log(userDetails);
-	};
-	const handleCompanyName = (e) => {
-		setuserDetails([...userDetails, { company: e.target.value }]);
-		console.log(userDetails);
-	};
-	const handleCountry = (e) => {
-		setuserDetails([...userDetails, { country: e.target.value }]);
-		console.log(userDetails);
-	};
-	const handleTown = (e) => {
-		setuserDetails([...userDetails, { town: e.target.value }]);
-		console.log(userDetails);
-	};
-	const handleStreet = (e) => {
-		setuserDetails([...userDetails, { street: e.target.value }]);
-		console.log(userDetails);
-	};
-	const handleZip = (e) => {
-		setuserDetails([...userDetails, { zip: e.target.value }]);
-		console.log(userDetails);
-	};
-	const handlePhone = (e) => {
-		setuserDetails([...userDetails, { phone: e.target.value }]);
-		console.log(userDetails);
-	};
-	const handleCity = (e) => {
-		setuserDetails([...userDetails, { city: e.target.value }]);
+	const handleDeets = (event) => {
+		const target = event.target;
+		const name = target.name;
+		setuserDetails([...userDetails, { [name]: value }]);
 		console.log(userDetails);
 	};
 	const confirmDeets = () => {
@@ -59,6 +34,7 @@ const Checkout = () => {
 			userDeets: userDetails,
 		});
 	};
+
 	return (
 		<Grid container className="checkout_container">
 			<Grid item xs={12} sm={12} md={12} lg={12} className="checkout_header">
@@ -78,14 +54,15 @@ const Checkout = () => {
 								borderColor: '#f00',
 							}}
 							size="medium"
-							onChange={handleFirstName}
+							// onChange={handleDeets}
 						/>
 						<TextField
 							label="Last Name"
 							variant="filled"
 							className="text_field"
 							style={{ width: '45%' }}
-							onChange={handleLastName}
+							name="lastName"
+							// onChange={handleLastName}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -94,7 +71,8 @@ const Checkout = () => {
 							variant="filled"
 							className="text_field"
 							fullWidth
-							onChange={handleCompanyName}
+							name="companyName"
+							// onChange={handleCompanyName}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -103,7 +81,8 @@ const Checkout = () => {
 							variant="filled"
 							className="text_field"
 							fullWidth
-							onChange={handleCountry}
+							name="country"
+							// onChange={handleCountry}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -112,7 +91,8 @@ const Checkout = () => {
 							fullWidth
 							variant="filled"
 							className="text_field"
-							onChange={handleCity}
+							// onChange={handleCity}
+							name="city"
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -121,7 +101,8 @@ const Checkout = () => {
 							variant="filled"
 							fullWidth
 							className="text_field"
-							onChange={handleTown}
+							name="town"
+							// onChange={handleTown}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -129,8 +110,9 @@ const Checkout = () => {
 							label="Street"
 							variant="filled"
 							fullWidth
+							name="street"
 							className="text_field"
-							onChange={handleStreet}
+							// onChange={handleStreet}
 						/>
 					</div>
 
@@ -138,10 +120,10 @@ const Checkout = () => {
 						<TextField
 							label="Zip Code"
 							fullWidth
-							type="number"
 							variant="filled"
+							name="zip"
 							className="text_field"
-							onChange={handleZip}
+							// onChange={handleZip}
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
@@ -150,8 +132,9 @@ const Checkout = () => {
 							variant="filled"
 							className="text_field"
 							fullWidth
+							name="phone"
 							type="number"
-							onChange={handlePhone}
+							// onChange={handlePhone}
 						/>
 					</div>
 				</Grid>
@@ -209,7 +192,7 @@ const Checkout = () => {
 							<p style={{ color: '#fff' }}>$750</p>
 						</div>
 						<FormControl component="fieldset">
-							<RadioGroup>
+							<RadioGroup onChange={handleDeets}>
 								<FormControlLabel
 									value="Direct Bank Transfer"
 									label="Direct Bank Transfer"
