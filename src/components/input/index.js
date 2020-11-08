@@ -12,28 +12,16 @@ import { green } from '@material-ui/core/colors';
 export const CssTextField = withStyles({
 	root: {
 		'& label.Mui-focused': {
-			color: 'green',
-			borderBottomColor: 'green',
+			color: '#adadad',
 		},
 		'& .MuiInput-underline:after': {
-			borderBottomColor: 'green',
+			borderBottomColor: '#adadad',
 		},
-		'& .MuiOutlinedInput-root': {
-			'& fieldset': {
-				borderColor: 'green',
-				borderBottomColor: 'green',
-			},
-			'&:hover fieldset': {
-				borderColor: 'green',
-				borderBottomColor: 'green',
-			},
-			'&.Mui-focused fieldset': {
-				borderColor: 'green',
-				borderBottomColor: 'green',
-			},
+		'& .MuiInputBase-input': {
+			color: '#adadad', // Text color
 		},
-		'&input.Mui-focused': {
-			borderBottomColor: 'green',
+		'& .MuiInput-underline:hover:before': {
+			borderBottomColor: '#adadad', // Solid underline on hover
 		},
 	},
 })(TextField);

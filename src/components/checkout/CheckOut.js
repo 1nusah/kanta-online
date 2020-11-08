@@ -3,7 +3,6 @@ import './Checkout.css';
 import {
 	Grid,
 	Typography,
-	TextField,
 	Radio,
 	RadioGroup,
 	FormControl,
@@ -12,28 +11,10 @@ import {
 } from '@material-ui/core';
 import { CssTextField } from '../input';
 import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
 
 import { useStateValue } from '../../StateProvider';
-const useStyles = makeStyles((theme) => ({
-	root: {
-		'& .MuiInputBase-input': {
-			color: '#fff', // Text color
-		},
-		'& .MuiInput-underline:before': {
-			borderBottomColor: '#fff8', // Semi-transparent underline
-		},
-		'& .MuiInput-underline:hover:before': {
-			borderBottomColor: '#fff', // Solid underline on hover
-		},
-		'& .MuiInput-underline:after': {
-			borderBottomColor: '#fff', // Solid underline on focus
-		},
-	},
-}));
-const Checkout = () => {
-	const classes = useStyles();
 
+const Checkout = () => {
 	const [userDetails, setuserDetails] = useState([]);
 	const [{ userDeets }, dispatch] = useStateValue([]);
 	const [value, setValue] = useState('');
@@ -63,7 +44,7 @@ const Checkout = () => {
 			<Grid container>
 				<Grid item xs={12} sm={12} md={6} lg={6}>
 					<div style={{ marginBottom: '20px' }}>
-						<TextField
+						<CssTextField
 							label="First Name"
 							variant="filled"
 							className="text_field"
@@ -76,7 +57,7 @@ const Checkout = () => {
 							size="medium"
 							onChange={handleDeets}
 						/>
-						<TextField
+						<CssTextField
 							label="Last Name"
 							variant="filled"
 							className="text_field"
@@ -86,7 +67,7 @@ const Checkout = () => {
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
-						<TextField
+						<CssTextField
 							label="Company Name(Optional)"
 							variant="filled"
 							className="text_field"
@@ -96,7 +77,7 @@ const Checkout = () => {
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
-						<TextField
+						<CssTextField
 							label="Country"
 							variant="filled"
 							className="text_field"
@@ -106,7 +87,7 @@ const Checkout = () => {
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
-						<TextField
+						<CssTextField
 							label="City"
 							fullWidth
 							variant="filled"
@@ -116,7 +97,7 @@ const Checkout = () => {
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
-						<TextField
+						<CssTextField
 							label="Town"
 							variant="filled"
 							fullWidth
@@ -126,7 +107,7 @@ const Checkout = () => {
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
-						<TextField
+						<CssTextField
 							label="Street"
 							variant="filled"
 							fullWidth
@@ -137,7 +118,7 @@ const Checkout = () => {
 					</div>
 
 					<div style={{ marginBottom: '20px' }}>
-						<TextField
+						<CssTextField
 							label="Zip Code"
 							fullWidth
 							variant="filled"
@@ -147,7 +128,7 @@ const Checkout = () => {
 						/>
 					</div>
 					<div style={{ marginBottom: '20px' }}>
-						<TextField
+						<CssTextField
 							label="Phone"
 							variant="filled"
 							className="text_field"

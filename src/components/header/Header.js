@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import {
+	AppBar,
+	Toolbar,
+	Typography,
+	Button,
+	TextField,
+	Menu,
+	MenuItem,
+	IconButton,
+} from '@material-ui/core';
+
 import SearchIcon from '@material-ui/icons/Search';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
 import CancelIcon from '@material-ui/icons/Cancel';
-import TextField from '@material-ui/core/TextField';
-import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useStateValue } from '../../StateProvider';
 import './Header.css';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-
+import { CssTextField } from '../input/index';
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
@@ -106,7 +109,7 @@ export default function Header(props) {
 										<Button className="header_button">shoes</Button>
 									</MenuItem>
 									<MenuItem onClick={() => handleMenuClick}>
-										{!searchBool && <TextField />}
+										{!searchBool && <CssTextField />}
 										{/* {searchBool && (
 		        <Button>
 					<SearchIcon
@@ -159,7 +162,7 @@ export default function Header(props) {
 										className="header_button"
 										style={{ display: 'flex', textAlign: 'center' }}
 									>
-										{!searchBool && <TextField />}
+										{!searchBool && <CssTextField />}
 										{searchBool && (
 											<Button>
 												<SearchIcon
