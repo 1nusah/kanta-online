@@ -16,7 +16,7 @@ import { useStateValue } from '../../StateProvider';
 
 const Checkout = () => {
 	const [userDetails, setuserDetails] = useState([]);
-	const [{ userDeets }, dispatch] = useStateValue([]);
+	const [{ userDeets, basket }, dispatch] = useStateValue([]);
 	const [value, setValue] = useState('');
 	const handleChange = (event) => {
 		setValue([...userDetails, { paymentOption: event.target.value }]);
@@ -35,6 +35,7 @@ const Checkout = () => {
 			userDeets: userDetails,
 		});
 	};
+	let total = 0;
 
 	return (
 		<Grid container className="checkout_container">
@@ -158,6 +159,29 @@ const Checkout = () => {
 						>
 							Order Details
 						</Typography>
+						{basket?.map((item) => {
+							{
+								total += Number(item.price.substring(1));
+							}
+							return (
+								<div
+									style={{
+										display: 'flex',
+										flexDirection: 'row',
+										paddingBottom: '10px',
+									}}
+								>
+									<p style={{ textAlign: 'left', paddingRight: '50%' }}>
+										{/* Haban Hoodie(qty. 5) */}
+										{item.name}
+									</p>
+									<p style={{ textAlign: 'right', color: '#fff' }}>
+										{item.price}
+									</p>
+								</div>
+							);
+						})}
+
 						<div
 							style={{
 								display: 'flex',
@@ -165,32 +189,8 @@ const Checkout = () => {
 								paddingBottom: '10px',
 							}}
 						>
-							<p style={{ textAlign: 'left', paddingRight: '50%' }}>
-								Haban Hoodie(qty. 5)
-							</p>
-							<p style={{ textAlign: 'right' }}>$750</p>
-						</div>
-						<div
-							style={{
-								display: 'flex',
-								flexDirection: 'row',
-								paddingBottom: '10px',
-							}}
-						>
-							<p style={{ textAlign: 'left', paddingRight: '50%' }}>
-								Haban Hoodie(qty. 5)
-							</p>
-							<p style={{ textAlign: 'right' }}>$750</p>
-						</div>
-						<div
-							style={{
-								display: 'flex',
-								flexDirection: 'row',
-								paddingBottom: '10px',
-							}}
-						>
-							<p style={{ color: '#fff', paddingRight: '71.5%' }}>Total</p>
-							<p style={{ color: '#fff' }}>$750</p>
+							<p style={{ color: '#fff', paddingRight: '85%' }}>Total</p>
+							<p style={{ color: '#fff' }}>${total + '.00'}</p>
 						</div>
 						<FormControl component="fieldset">
 							<RadioGroup onChange={handleChange} name="paymentOptions">

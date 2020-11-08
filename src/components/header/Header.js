@@ -20,6 +20,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useStateValue } from '../../StateProvider';
 import './Header.css';
 import { CssTextField } from '../input/index';
+
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
@@ -37,6 +38,7 @@ export default function Header(props) {
 	const classes = useStyles();
 	const [{ basket }] = useStateValue();
 	const [searchBool, setsearchBool] = useState(true);
+	const [searchText, setSearchText] = useState('');
 	const { history } = props;
 	const [anchorEl, setAnchorEl] = React.useState(null);
 	const open = Boolean(anchorEl);
@@ -45,10 +47,20 @@ export default function Header(props) {
 	const handleMenu = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
+	const searchResults = (event) => {
+		event.preventDefault();
+		console.log('hi there');
+		setsearchBool(!searchBool);
 
+		console.log(props);
+	};
 	const handleMenuClick = (pageURL) => {
 		history.push(pageURL);
 		setAnchorEl(null);
+	};
+	const handleSearchText = (event) => {
+		setSearchText(event.target.value);
+		console.log(searchText);
 	};
 	console.log(basket);
 	return (
@@ -162,7 +174,11 @@ export default function Header(props) {
 										className="header_button"
 										style={{ display: 'flex', textAlign: 'center' }}
 									>
-										{!searchBool && <CssTextField />}
+										{!searchBool && (
+											<form onSubmit={searchResults}>
+												<CssTextField onChange={handleSearchText} />
+											</form>
+										)}
 										{searchBool && (
 											<Button>
 												<SearchIcon
