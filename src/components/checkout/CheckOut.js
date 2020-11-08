@@ -12,9 +12,28 @@ import {
 } from '@material-ui/core';
 import { CssTextField } from '../input';
 import { Link } from 'react-router-dom';
-import { useStateValue } from '../../StateProvider';
+import { makeStyles } from '@material-ui/core/styles';
 
+import { useStateValue } from '../../StateProvider';
+const useStyles = makeStyles((theme) => ({
+	root: {
+		'& .MuiInputBase-input': {
+			color: '#fff', // Text color
+		},
+		'& .MuiInput-underline:before': {
+			borderBottomColor: '#fff8', // Semi-transparent underline
+		},
+		'& .MuiInput-underline:hover:before': {
+			borderBottomColor: '#fff', // Solid underline on hover
+		},
+		'& .MuiInput-underline:after': {
+			borderBottomColor: '#fff', // Solid underline on focus
+		},
+	},
+}));
 const Checkout = () => {
+	const classes = useStyles();
+
 	const [userDetails, setuserDetails] = useState([]);
 	const [{ userDeets }, dispatch] = useStateValue([]);
 	const [value, setValue] = useState('');
