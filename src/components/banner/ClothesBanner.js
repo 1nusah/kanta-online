@@ -1,5 +1,15 @@
 import React from 'react';
 import { Typography, Grid, Button, CircularProgress } from '@material-ui/core';
+
+// this is the banner component
+// we have a list of buttons that should be displayed
+// then we pass a prop of clothes, shoes, bag, etc
+// so passed on the props that is passed
+// then we render the array into the shit
+// example is we render men as the classification props
+// then next is we men=['View all','Casual','shirts','trouser','hoodies','more]
+// use a .map to render this shit
+// then finally when you click on the button then we add the button text to the search query
 const ClothesBanner = ({ classification }) => {
 	return (
 		<Grid container>
