@@ -42,7 +42,7 @@ const BagProducts = () => {
 	}, []);
 	return (
 		<Grid container className="men">
-			<ClotehesBanner classification="Bags" />
+			<ClotehesBanner classification="bags" />
 			{bags.length === 0 ? (
 				<Loading />
 			) : (

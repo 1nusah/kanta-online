@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
-import ClotehesBanner from '../banner/ClothesBanner';
+import ClothesBanner from '../banner/ClothesBanner';
 import axios from 'axios';
 import './ChildrenProducts.css';
 import Loading from '../loading/loading';
@@ -42,7 +42,7 @@ const ChildrenProducts = () => {
 	}, []);
 	return (
 		<Grid container className="men">
-			<ClotehesBanner classification="Children" />
+			<ClothesBanner classification="children" />
 			{children.length === 0 ? (
 				<Loading />
 			) : (

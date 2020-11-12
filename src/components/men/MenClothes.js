@@ -46,7 +46,7 @@ const Mens = () => {
 
 	return (
 		<Grid container className="men">
-			<ClothesBanner classification="Men" />
+			<ClothesBanner classification="men" />
 			<Grid container style={{ paddingBottom: '10px' }}>
 				{menShirt.length === 0 ? (
 					<Loading />
