@@ -81,7 +81,7 @@ function App() {
 					<Search />
 					<Footer />
 				</Route>
-				<Route path="/search/:id">
+				<Route path="/searchResults">
 					<Header />
 					<SearchResults />
 					<Footer />

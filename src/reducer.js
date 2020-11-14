@@ -2,6 +2,7 @@ export const initialState = {
 	basket: [],
 	user: null,
 	selectedItem: {},
+	searchResults: [],
 };
 
 export function reducer(state = initialState, action) {
@@ -39,6 +40,11 @@ export function reducer(state = initialState, action) {
 			return {
 				...state,
 				userDetails: action.userDeets,
+			};
+		case 'SEARCH_RESULTS':
+			return {
+				...state,
+				searchResults: action.results,
 			};
 		default:
 			return state;
