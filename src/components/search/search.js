@@ -36,8 +36,7 @@ const Search = () => {
 		axios
 			.request(options)
 			.then(function (response) {
-				// console.log(response.data);
-				// setmenShirt(response.data);
+				console.log(response.data);
 			})
 			.catch(function (error) {
 				console.error(error);
@@ -70,7 +69,7 @@ const Search = () => {
 							color: '#adadad',
 							borderBottomColor: '#adadad',
 						}}
-						onClick={() => alert('ahjjajaj')}
+						onClick={handleSearch}
 					/>
 				</Button>
 			</Grid>

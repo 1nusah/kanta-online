@@ -15,7 +15,7 @@ import ShoeProducts from './components/shoes/ShoeProducts';
 import OrderSuccess from './components/orderPage/OrderSuccess';
 import Shop from './components/shop/Shop';
 import Search from './components/search/search';
-
+import SearchResults from './components/search/searchResults';
 function App() {
 	return (
 		<Router>
@@ -79,6 +79,11 @@ function App() {
 				<Route path="/search">
 					<Header />
 					<Search />
+					<Footer />
+				</Route>
+				<Route path="/search/:id">
+					<Header />
+					<SearchResults />
 					<Footer />
 				</Route>
 				<Route path="/">
