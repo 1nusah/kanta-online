@@ -3,8 +3,7 @@ import { Button, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 import './Cart.css';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
-import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
+
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useStateValue } from '../../StateProvider';
 import Ill from '../../assets/illustration/undraw_empty_cart_co35.svg';
@@ -12,7 +11,6 @@ import Ill from '../../assets/illustration/undraw_empty_cart_co35.svg';
 const Cart = ({ id }) => {
 	const [{ basket }, dispatch] = useStateValue();
 	console.log('basket is ', typeof basket);
-	const mainTotal = 0;
 	console.log(basket);
 	const removeFromBasket = (id) => {
 		//to remove the item from the baskets
@@ -35,7 +33,7 @@ const Cart = ({ id }) => {
 				>
 					<Grid item xs={12} sm={12} lg={12} md={12}>
 						<div style={{ height: '50vh' }}>
-							<img src={Ill} width="100%" height="100%" />
+							<img src={Ill} width="100%" height="100%" alt="item" />
 						</div>
 						<div style={{ marginTop: '20px' }}>
 							<h1>Go shop and come back</h1>
@@ -71,6 +69,7 @@ const Cart = ({ id }) => {
 												src={'https://' + item.image}
 												height="auto"
 												width="100%"
+												alt="item"
 											/>
 										</div>
 										<p style={{ paddingLeft: '5px' }}>{item.name}</p>

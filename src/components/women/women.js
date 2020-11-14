@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, CircularProgress } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 import axios from 'axios';
 import Product from '../product/Product';

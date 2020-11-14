@@ -9,7 +9,7 @@ import { useStateValue } from '../../StateProvider';
 
 const Search = () => {
 	const [searchItem, setsearchItem] = useState('');
-	const [{ searchResults }, dispatch] = useStateValue();
+	const [dispatch] = useStateValue();
 
 	const handleSearchText = (event) => {
 		setsearchItem(event.target.value);
