@@ -4,7 +4,7 @@
 	margin-bottom: 10px;
 }
 .header_brand {
-	padding-right: 30%;
+	/* padding-right: 30%; */
 }
 .header Button {
 	color: #adadad;
@@ -22,9 +22,18 @@
 sup {
 	color: #adadad;
 }
+
 @media screen and (max-width: 600px) {
-	.header_brand {
+	.header {
 		position: relative;
-		float: left;
+	}
+	.header_brand {
+		padding-right: 70%;
+	}
+	.menuIcon {
+		right: 0;
+	}
+	.header_link {
+		text-decoration: none;
 	}
 }

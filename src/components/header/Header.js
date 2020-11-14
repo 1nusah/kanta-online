@@ -6,9 +6,6 @@ import {
 	Toolbar,
 	Typography,
 	Button,
-	TextField,
-	Menu,
-	MenuItem,
 	IconButton,
 } from '@material-ui/core';
 
@@ -20,7 +17,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useStateValue } from '../../StateProvider';
 import './Header.css';
 import { CssTextField } from '../input/index';
-
+import TemporaryDrawer from './drawer';
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
@@ -39,14 +36,14 @@ export default function Header(props) {
 	const [{ basket }] = useStateValue();
 	const [searchBool, setsearchBool] = useState(true);
 	const [searchText, setSearchText] = useState('');
-	const { history } = props;
-	const [anchorEl, setAnchorEl] = React.useState(null);
-	const open = Boolean(anchorEl);
+	const [toggleDrawer, settoggleDrawer] = useState(false);
+	const showDrawer = () => {
+		settoggleDrawer(!toggleDrawer);
+	};
+
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
-	const handleMenu = (event) => {
-		setAnchorEl(event.currentTarget);
-	};
+
 	const searchResults = (event) => {
 		event.preventDefault();
 		console.log('hi there');
@@ -54,10 +51,7 @@ export default function Header(props) {
 
 		console.log(props);
 	};
-	const handleMenuClick = (pageURL) => {
-		history.push(pageURL);
-		setAnchorEl(null);
-	};
+
 	const handleSearchText = (event) => {
 		setSearchText(event.target.value);
 		console.log(searchText);
@@ -83,64 +77,14 @@ export default function Header(props) {
 									className={classes.menuButton}
 									color="inherit"
 									aria-label="menu"
-									onClick={handleMenu}
+									onClick={showDrawer}
 								>
-									<MenuIcon style={{ color: '#adadad' }} />
+									<MenuIcon className="menuIcon" style={{ color: '#adadad' }} />
 								</IconButton>
-								<Menu
-									id="menu-appbar"
-									anchorEl={anchorEl}
-									anchorOrigin={{
-										vertical: 'top',
-										horizontal: 'right',
-									}}
-									keepMounted
-									transformOrigin={{
-										vertical: 'top',
-										horizontal: 'right',
-									}}
-									open={open}
-									onClose={() => setAnchorEl(null)}
-								>
-									<MenuItem
-										style={{ width: '100%', hieght: '15%' }}
-										onClick={() => handleMenuClick('/women')}
-									>
-										<Button className="header_button">women</Button>
-									</MenuItem>
-									<MenuItem onClick={() => handleMenuClick('/men')}>
-										<Button className="header_button">men</Button>
-									</MenuItem>
-									<MenuItem onClick={() => handleMenuClick('/children')}>
-										<Button className="header_button">children</Button>
-									</MenuItem>
-									<MenuItem onClick={() => handleMenuClick('/bags')}>
-										<Button className="header_button">bags</Button>
-									</MenuItem>
-									<MenuItem onClick={() => handleMenuClick('/shoes')}>
-										<Button className="header_button">shoes</Button>
-									</MenuItem>
-									<MenuItem onClick={() => handleMenuClick}>
-										{!searchBool && <CssTextField />}
-										{/* {searchBool && (
-		        <Button>
-					<SearchIcon
-						 style={{ color: '#adadad', borderBottomColor: '#adadad' }}
-						 onClick={() => {
-							 setsearchBool(!searchBool);
-							 	}}
-										/>
-									</Button>
-								)}					
-								{!searchBool && (
-									<Button>
-										<CancelIcon
-											style={{ color: '#adadad', borderBottomColor: '#adadad' }}
-											onClick={() => {
-												setsearchBool(!searchBool);
-											}} */}
-									</MenuItem>
-								</Menu>
+								<TemporaryDrawer
+									open={toggleDrawer}
+									ToggleDrawer={showDrawer}
+								/>
 							</>
 						) : (
 							<>
