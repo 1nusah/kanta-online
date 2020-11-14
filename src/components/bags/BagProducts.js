@@ -25,7 +25,7 @@ const BagProducts = () => {
 			},
 			headers: {
 				'x-rapidapi-host': 'asos2.p.rapidapi.com',
-				'x-rapidapi-key': '583c0bbb31msh25aee6af24c8df9p1f6b0ajsn4488c2bd87b7',
+				'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY,
 			},
 		};
 

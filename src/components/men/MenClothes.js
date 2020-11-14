@@ -28,7 +28,7 @@ const Mens = () => {
 			},
 			headers: {
 				'x-rapidapi-host': 'asos2.p.rapidapi.com',
-				'x-rapidapi-key': '908eaa4eadmsh94afb70c1999659p1921b3jsn8b74ead96ca2',
+				'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY,
 			},
 		};
 

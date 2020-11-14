@@ -22,7 +22,9 @@
 sup {
 	color: #adadad;
 }
-
+.header_brand {
+	padding-right: 30%;
+}
 @media screen and (max-width: 600px) {
 	.header {
 		position: relative;

@@ -14,6 +14,7 @@ import BagProducts from './components/bags/BagProducts';
 import ShoeProducts from './components/shoes/ShoeProducts';
 import OrderSuccess from './components/orderPage/OrderSuccess';
 import Shop from './components/shop/Shop';
+
 function App() {
 	return (
 		<Router>
