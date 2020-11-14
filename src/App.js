@@ -14,6 +14,7 @@ import BagProducts from './components/bags/BagProducts';
 import ShoeProducts from './components/shoes/ShoeProducts';
 import OrderSuccess from './components/orderPage/OrderSuccess';
 import Shop from './components/shop/Shop';
+import Search from './components/search/search';
 
 function App() {
 	return (
@@ -75,11 +76,12 @@ function App() {
 					<ProductCheckOut />
 					<Footer />
 				</Route>
-				<Route path="/login">
-					<h1>Login</h1>
+				<Route path="/search">
+					<Header />
+					<Search />
+					<Footer />
 				</Route>
 				<Route path="/">
-					<h1>hello world</h1>
 					<Header />
 					<Home />
 					<Footer />

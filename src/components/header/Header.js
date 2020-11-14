@@ -11,7 +11,6 @@ import {
 
 import SearchIcon from '@material-ui/icons/Search';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
-import CancelIcon from '@material-ui/icons/Cancel';
 import MenuIcon from '@material-ui/icons/Menu';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useStateValue } from '../../StateProvider';
@@ -123,32 +122,16 @@ export default function Header(props) {
 												<CssTextField onChange={handleSearchText} />
 											</form>
 										)}
-										{searchBool && (
+										<Link to="/search">
 											<Button>
 												<SearchIcon
 													style={{
 														color: '#adadad',
 														borderBottomColor: '#adadad',
 													}}
-													onClick={() => {
-														setsearchBool(!searchBool);
-													}}
 												/>
 											</Button>
-										)}
-										{!searchBool && (
-											<Button>
-												<CancelIcon
-													style={{
-														color: '#adadad',
-														borderBottomColor: '#adadad',
-													}}
-													onClick={() => {
-														setsearchBool(!searchBool);
-													}}
-												/>
-											</Button>
-										)}
+										</Link>
 									</div>
 									<Link to="/cart" className="header_link">
 										<div className="header_button">
