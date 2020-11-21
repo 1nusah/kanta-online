@@ -8,8 +8,7 @@ import ClothesBanner from '../banner/ClothesBanner';
 import Loading from '../loading/loading';
 const Mens = () => {
 	const [menShirt, setmenShirt] = useState([]);
-	console.log('i am ', typeof menShirt);
-	console.log(menShirt);
+
 	useEffect(() => {
 		var options = {
 			method: 'GET',
@@ -35,9 +34,7 @@ const Mens = () => {
 		axios
 			.request(options)
 			.then(function (response) {
-				// console.log(response.data);
 				setmenShirt(response.data);
-				console.log(typeof menShirt);
 			})
 			.catch(function (error) {
 				console.error(error);

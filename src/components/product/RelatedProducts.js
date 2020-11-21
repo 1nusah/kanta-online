@@ -5,8 +5,7 @@ import axios from 'axios';
 import Product from './Product';
 const RelatedProducts = ({ categoryOfProducts }) => {
 	const [relatedProducts, setrelatedProducts] = useState([]);
-	console.log('i am ', typeof relatedProducts);
-	console.log(relatedProducts);
+
 	useEffect(() => {
 		var options = {
 			method: 'GET',
@@ -33,7 +32,6 @@ const RelatedProducts = ({ categoryOfProducts }) => {
 			.request(options)
 			.then(function (response) {
 				setrelatedProducts(response.data);
-				console.log(typeof relatedProducts);
 			})
 			.catch(function (error) {
 				console.error(error);

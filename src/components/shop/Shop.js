@@ -5,8 +5,7 @@ import Product from '../product/Product';
 import Loading from '../loading/loading';
 const Shop = () => {
 	const [shop, setshop] = useState([]);
-	console.log('i am ', typeof shop);
-	console.log(shop);
+
 	useEffect(() => {
 		var options = {
 			method: 'GET',
@@ -33,7 +32,6 @@ const Shop = () => {
 			.request(options)
 			.then(function (response) {
 				setshop(response.data);
-				console.log(typeof shop);
 			})
 			.catch(function (error) {
 				console.error(error);

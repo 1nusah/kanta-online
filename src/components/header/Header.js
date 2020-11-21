@@ -45,17 +45,12 @@ export default function Header(props) {
 
 	const searchResults = (event) => {
 		event.preventDefault();
-		console.log('hi there');
 		setsearchBool(!searchBool);
-
-		console.log(props);
 	};
 
 	const handleSearchText = (event) => {
 		setSearchText(event.target.value);
-		console.log(searchText);
 	};
-	console.log(basket);
 	return (
 		<div className="header" style={{ backgroundColor: '#fff' }}>
 			<AppBar

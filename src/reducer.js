@@ -1,14 +1,11 @@
 export const initialState = {
 	basket: [],
 	user: null,
-	selectedItem: {
-	
-	},
+	selectedItem: {},
 	searchResults: [],
 };
 
 export function reducer(state = initialState, action) {
-	console.log(action);
 	switch (action.type) {
 		case 'ADD_TO_BASKET':
 			// logic for adding item to basket
@@ -52,10 +49,10 @@ export function reducer(state = initialState, action) {
 			return state;
 	}
 }
-	// id: 21668786,
-	// 	image:
-	// 		'images.asos-media.com/products/hearbreak-scoop-neck-tailored-mini-dress-in-black-and-red-plaid-co-ord/21668786-1-blackred',
-	// 	name:
-	// 		'Hearbreak scoop neck tailored mini dress in black and red plaid co-ord',
-	// 	price: '$29.00',
-	// 	quantity: 1,
+// id: 21668786,
+// 	image:
+// 		'images.asos-media.com/products/hearbreak-scoop-neck-tailored-mini-dress-in-black-and-red-plaid-co-ord/21668786-1-blackred',
+// 	name:
+// 		'Hearbreak scoop neck tailored mini dress in black and red plaid co-ord',
+// 	price: '$29.00',
+// 	quantity: 1,

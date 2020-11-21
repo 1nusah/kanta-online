@@ -10,8 +10,7 @@ import Ill from '../../assets/illustration/undraw_empty_cart_co35.svg';
 
 const Cart = ({ id }) => {
 	const [{ basket }, dispatch] = useStateValue();
-	console.log('basket is ', typeof basket);
-	console.log(basket);
+
 	const removeFromBasket = (id) => {
 		//to remove the item from the baskets
 		dispatch({

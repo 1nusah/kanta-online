@@ -13,7 +13,6 @@ const Search = () => {
 
 	const handleSearchText = (event) => {
 		setsearchItem(event.target.value);
-		console.log(searchItem);
 	};
 	const handleSearch = () => {
 		var options = {
@@ -40,7 +39,6 @@ const Search = () => {
 		axios
 			.request(options)
 			.then(function (response) {
-				console.log(response.data);
 				dispatch({
 					type: 'SEARCH_RESULTS',
 					results: response.data,

@@ -20,14 +20,11 @@ const Checkout = () => {
 	const [value, setValue] = useState('');
 	const handleChange = (event) => {
 		setValue([...userDetails, { paymentOption: event.target.value }]);
-		console.log(value);
 	};
 	const handleDeets = (event) => {
 		const target = event.target;
 		const name = target.name;
 		setuserDetails([...userDetails, { [name]: target.value }]);
-		console.log(userDetails);
-		console.log(name);
 	};
 	const confirmDeets = () => {
 		dispatch({

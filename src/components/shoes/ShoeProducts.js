@@ -32,9 +32,7 @@ const ShoeProducts = () => {
 		axios
 			.request(options)
 			.then(function (response) {
-				// console.log(response.data);
 				setshoes(response.data);
-				// console.log(typeof menShirt);
 			})
 			.catch(function (error) {
 				console.error(error);

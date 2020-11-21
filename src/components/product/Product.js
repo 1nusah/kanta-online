@@ -19,7 +19,6 @@ const Product = ({ image, name, price, id, quantity }) => {
 			},
 		});
 		history.push('/productcheckout');
-		console.log(basket);
 	};
 	return (
 		<Grid item xs={12} sm={12} md={3} lg={3} className="product">
@@ -36,8 +35,6 @@ const Product = ({ image, name, price, id, quantity }) => {
 			<p className="product_price" onClick={handleSelect}>
 				{price}
 			</p>
-			{console.log('price is ', price)}
-			{console.log(id)}
 		</Grid>
 	);
 };

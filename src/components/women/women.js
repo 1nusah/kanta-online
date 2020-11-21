@@ -7,8 +7,7 @@ import ClothesBanner from '../banner/ClothesBanner';
 import Loading from '../loading/loading';
 const Womens = () => {
 	const [women, setwomen] = useState([]);
-	console.log('i am ', typeof women);
-	console.log(women);
+	
 	useEffect(() => {
 		var options = {
 			method: 'GET',
@@ -35,7 +34,6 @@ const Womens = () => {
 			.request(options)
 			.then(function (response) {
 				setwomen(response.data);
-				console.log(typeof women);
 			})
 			.catch(function (error) {
 				console.error(error);

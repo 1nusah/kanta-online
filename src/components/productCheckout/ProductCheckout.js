@@ -30,10 +30,10 @@ const ProductCheckOut = () => {
 					</div>
 					<div className="productcheckout_description">
 						<p>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum
-							iure veritatis, enim, quisquam delectus sunt dolor laborum error
-							necessitatibus facilis accusamus debitis doloribus vel ad veniam
-							tempore qui .
+							This produced from the finest of materials which are exclusive to
+							our brand. We strongly believe in our customers feeling
+							comfortable and easy when they wear our stuff. I don't know what
+							to add since I'm really tired and thank you for your purchase
 						</p>
 					</div>
 				</div>
