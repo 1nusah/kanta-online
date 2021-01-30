@@ -133,7 +133,7 @@ export default function Header(props) {
 											<Button>
 												<LocalMallIcon style={{ color: '#adadad' }} />
 												<sup style={{ fontSize: '10px' }}>
-													{basket.length > 0 && basket.length}
+													{basket?.length > 0 && basket?.length}
 												</sup>
 											</Button>
 										</div>
