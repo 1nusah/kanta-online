@@ -14,9 +14,8 @@ import LocalMallIcon from '@material-ui/icons/LocalMall';
 import MenuIcon from '@material-ui/icons/Menu';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useStateValue } from '../../StateProvider';
-import './Header.css';
+// import './Header.css';
 import { CssTextField } from '../input/index';
-import TemporaryDrawer from './drawer';
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
@@ -52,11 +51,9 @@ export default function Header(props) {
 		setSearchText(event.target.value);
 	};
 	return (
-		<div className="header" style={{ backgroundColor: '#fff' }}>
-			<AppBar
-				position="fixed"
-				style={{ backgroundColor: '#333333', width: '100%' }}
-			>
+		<div className="header">
+			<AppBar position="fixed">
+				{/* style={{ backgroundColor: '#333333', width: '100%' }} */}
 				<Toolbar className={classes.title}>
 					<Typography className="header_brand" variant="h6">
 						<Link to="/" className="header_link">
@@ -73,7 +70,7 @@ export default function Header(props) {
 									aria-label="menu"
 									onClick={showDrawer}
 								>
-									<MenuIcon className="menuIcon" style={{ color: '#adadad' }} />
+									<MenuIcon className="menuIcon" color="secondary" />
 								</IconButton>
 								<TemporaryDrawer
 									open={toggleDrawer}
@@ -105,7 +102,7 @@ export default function Header(props) {
 									</div>
 									<div className="header_button">
 										<Link className="header_link" to="/shoes">
-											<Button>Shoes</Button>
+											<Button color="secondary">Shoes</Button>
 										</Link>
 									</div>
 									<div
@@ -114,24 +111,19 @@ export default function Header(props) {
 									>
 										{!searchBool && (
 											<form onSubmit={searchResults}>
-												<CssTextField onChange={handleSearchText} />
+												<TextField onChange={handleSearchText} />
 											</form>
 										)}
 										<Link to="/search">
 											<Button>
-												<SearchIcon
-													style={{
-														color: '#adadad',
-														borderBottomColor: '#adadad',
-													}}
-												/>
+												<SearchIcon color="secondary" />
 											</Button>
 										</Link>
 									</div>
 									<Link to="/cart" className="header_link">
 										<div className="header_button">
 											<Button>
-												<LocalMallIcon style={{ color: '#adadad' }} />
+												<LocalMallIcon color="secondary" />
 												<sup style={{ fontSize: '10px' }}>
 													{basket?.length > 0 && basket?.length}
 												</sup>

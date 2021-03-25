@@ -35,7 +35,7 @@ const Cart = ({ id }) => {
 							<img src={Ill} width="100%" height="100%" alt="item" />
 						</div>
 						<div style={{ marginTop: '20px' }}>
-							<h1>Go shop and come back</h1>
+							<h1>It's all lonely in here</h1>
 						</div>
 					</Grid>
 				</Grid>
@@ -79,11 +79,9 @@ const Cart = ({ id }) => {
 								</Grid>
 								<Grid item xs={12} sm={12} md={3} lg={3}>
 									<div style={{ display: 'flex', flexDirection: 'row' }}>
-										{/* <RemoveCircleIcon /> */}
 										<p style={{ marginRight: '5px', marginLeft: '5px' }}>
 											{item.quantity}
 										</p>
-										{/* <AddCircleIcon /> */}
 									</div>
 								</Grid>
 								<Grid item xs={12} sm={12} md={3} lg={3}>
@@ -105,7 +103,9 @@ const Cart = ({ id }) => {
 						<Grid item xs={12} sm={12} md={12} lg={12}>
 							<Link to="/checkout" className="header_link">
 								<div className="productcheckout_button">
-									<Button style={{ color: '#adadad' }}>Proceed</Button>
+									<Button color="secondary" variant="contained">
+										Proceed
+									</Button>
 								</div>
 							</Link>
 						</Grid>
