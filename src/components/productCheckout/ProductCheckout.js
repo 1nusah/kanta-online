@@ -2,11 +2,9 @@ import React from 'react';
 import { Grid, Button } from '@material-ui/core';
 import './ProductCheckOut.css';
 import { useStateValue } from '../../StateProvider';
-import RelatedProducts from '../product/RelatedProducts';
 
 const ProductCheckOut = () => {
 	const [{ selectedItem }, dispatch] = useStateValue();
-	const [{ basket }] = useStateValue();
 	const addToBasket = () => {
 		// add item to basket ..
 		dispatch({
