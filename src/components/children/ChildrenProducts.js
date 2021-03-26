@@ -39,21 +39,24 @@ const ChildrenProducts = () => {
 			});
 	}, []);
 	return (
-		<Grid container className="men">
-			<ClothesBanner classification="children" />
-			{children.length === 0 ? (
-				<Loading />
-			) : (
-				children.products.map((item) => (
-					<Product
-						id={item.id}
-						name={item.name}
-						image={item.imageUrl}
-						price={item.price.current.text}
-					/>
-				))
-			)}
-		</Grid>
+		<>
+			<h1>children</h1>
+			<Grid container className="men">
+				<ClothesBanner classification="children" />
+				{children.length === 0 ? (
+					<Loading />
+				) : (
+					children.products.map((item) => (
+						<Product
+							id={item.id}
+							name={item.name}
+							image={item.imageUrl}
+							price={item.price.current.text}
+						/>
+					))
+				)}
+			</Grid>
+		</>
 	);
 };
 
