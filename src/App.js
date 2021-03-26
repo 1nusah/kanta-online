@@ -38,92 +38,59 @@ function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<Router>
+				<Header />
 				<Switch>
 					<Route path="/men">
-						<Header />
 						<h1>Men</h1>
 						<Mens />
-						<Footer />
 					</Route>
 					<Route path="/success">
-						<Header />
 						<OrderSuccess />
-						<Footer />
 					</Route>
 					<Route path="/shop">
-						<Header />
 						<Shop />
-						<Footer />
 					</Route>
 					<Route path="/women">
-						<Header />
 						<h1>WomMen</h1>
 						<Womens />
-						<Footer />
 					</Route>
 					<Route path="/bags">
-						<Header />
 						<h1>bags</h1>
 						<BagProducts />
-						<Footer />
 					</Route>
 					<Route path="/shoes">
-						<Header />
 						<h1>shoes</h1>
 						<ShoeProducts />
-						<Footer />
 					</Route>
 					<Route path="/children">
-						<Header />
 						<h1>children</h1>
 						<ChildrenProducts />
-						<Footer />
 					</Route>
 					<Route path="/checkout">
-						<Header />
 						<h1>Checkout</h1>
 						<Checkout />
-						<Footer />
 					</Route>
 					<Route path="/cart">
-						<Header />
 						<Cart />
-						<Footer />
 					</Route>
 					<Route path="/productcheckout">
-						<Header />
 						<ProductCheckOut />
-						<Footer />
 					</Route>
 					<Route path="/search">
-						<Header />
 						<Search />
-						<Footer />
 					</Route>
 					<Route path="/searchResults">
-						<Header />
 						<SearchResults />
-						<Footer />
 					</Route>
 					<Route path="/">
 						<Header />
 						<Home />
-						<Footer />
-						{/* <ThemePractice /> */}
 					</Route>
 				</Switch>
+				<Footer />
 			</Router>
 		</ThemeProvider>
 	);
 }
 
 export default App;
-// said push
-
-const ThemePractice = () => {
-	return (
-		<Button color="primary" variant="contained">
-			Hello THere my People
-		</Button>
-	);
-};
