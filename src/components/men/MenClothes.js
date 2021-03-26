@@ -6,13 +6,18 @@ import ClothesBanner from '../banner/ClothesBanner';
 import Loading from '../loading/loading';
 import useRequest from '../../hooks/useRequest';
 const Mens = () => {
-	const menShirt = useRequest('men,hoodie'); 
+	const menShirt = useRequest('men,hoodie');
 	return (
 		<>
 			<h1>Men</h1>
 			<Grid container className="men">
 				<ClothesBanner classification="men" />
-				<Grid container style={{ paddingBottom: '10px' }}>
+				<Grid
+					container
+					justify="center"
+					alignItems="center"
+					style={{ paddingBottom: '10px' }}
+				>
 					{menShirt.length === 0 ? (
 						<Loading />
 					) : (
