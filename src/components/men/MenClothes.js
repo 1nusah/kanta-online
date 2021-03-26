@@ -1,46 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment } from 'react';
 import './MenClothes.css';
 import { Grid } from '@material-ui/core';
-
-import axios from 'axios';
 import Product from '../product/Product';
 import ClothesBanner from '../banner/ClothesBanner';
 import Loading from '../loading/loading';
+import useRequest from '../../hooks/useRequest';
 const Mens = () => {
-	const [menShirt, setmenShirt] = useState([]);
-
-	useEffect(() => {
-		var options = {
-			method: 'GET',
-			url: 'https://rapidapi.p.rapidapi.com/products/v2/list',
-			params: {
-				offset: '0',
-				categoryId: '4209',
-				limit: '48',
-				store: 'US',
-				country: 'US',
-				currency: 'USD',
-				sort: 'freshness',
-				lang: 'en-US',
-				q: 'Men,Hoodie',
-				sizeSchema: 'US',
-			},
-			headers: {
-				'x-rapidapi-host': 'asos2.p.rapidapi.com',
-				'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY,
-			},
-		};
-
-		axios
-			.request(options)
-			.then(function (response) {
-				setmenShirt(response.data);
-			})
-			.catch(function (error) {
-				console.error(error);
-			});
-	}, []);
-
+	const menShirt = useRequest('men,hoodie'); 
 	return (
 		<>
 			<h1>Men</h1>
@@ -50,14 +16,17 @@ const Mens = () => {
 					{menShirt.length === 0 ? (
 						<Loading />
 					) : (
-						menShirt.products.map((item) => (
-							<Product
-								id={item.id}
-								name={item.name}
-								image={item.imageUrl}
-								price={item.price.current.text}
-							/>
-						))
+						<Fragment>
+							{menShirt.products.map((item) => (
+								<Product
+									key={item.id}
+									id={item.id}
+									name={item.name}
+									image={item.imageUrl}
+									price={item.price.current.text}
+								/>
+							))}
+						</Fragment>
 					)}
 				</Grid>
 			</Grid>

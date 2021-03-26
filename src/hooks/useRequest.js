@@ -10,7 +10,7 @@ const options = {
 	params: {
 		offset: '0',
 		categoryId: '4209',
-		limit: '48',
+		limit: '8',
 		store: 'US',
 		country: 'US',
 		currency: 'USD',
