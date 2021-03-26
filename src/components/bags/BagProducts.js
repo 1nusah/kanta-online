@@ -39,21 +39,24 @@ const BagProducts = () => {
 			});
 	}, []);
 	return (
-		<Grid container className="men">
-			<ClotehesBanner classification="bags" />
-			{bags.length === 0 ? (
-				<Loading />
-			) : (
-				bags.products.map((item) => (
-					<Product
-						id={item.id}
-						name={item.name}
-						image={item.imageUrl}
-						price={item.price.current.text}
-					/>
-				))
-			)}
-		</Grid>
+		<>
+			<h1>bags</h1>
+			<Grid container className="men">
+				<ClotehesBanner classification="bags" />
+				{bags.length === 0 ? (
+					<Loading />
+				) : (
+					bags.products.map((item) => (
+						<Product
+							id={item.id}
+							name={item.name}
+							image={item.imageUrl}
+							price={item.price.current.text}
+						/>
+					))
+				)}
+			</Grid>
+		</>
 	);
 };
 

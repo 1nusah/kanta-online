@@ -39,21 +39,24 @@ const ShoeProducts = () => {
 			});
 	}, []);
 	return (
-		<Grid container className="men">
-			<ClothesBanner classification="shoes" />
-			{shoes.length === 0 ? (
-				<Loading />
-			) : (
-				shoes.products.map((item) => (
-					<Product
-						id={item.id}
-						name={item.name}
-						image={item.imageUrl}
-						price={item.price.current.text}
-					/>
-				))
-			)}
-		</Grid>
+		<>
+			<h1>shoes</h1>
+			<Grid container className="men">
+				<ClothesBanner classification="shoes" />
+				{shoes.length === 0 ? (
+					<Loading />
+				) : (
+					shoes.products.map((item) => (
+						<Product
+							id={item.id}
+							name={item.name}
+							image={item.imageUrl}
+							price={item.price.current.text}
+						/>
+					))
+				)}
+			</Grid>
+		</>
 	);
 };
 

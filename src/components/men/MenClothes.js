@@ -42,23 +42,26 @@ const Mens = () => {
 	}, []);
 
 	return (
-		<Grid container className="men">
-			<ClothesBanner classification="men" />
-			<Grid container style={{ paddingBottom: '10px' }}>
-				{menShirt.length === 0 ? (
-					<Loading />
-				) : (
-					menShirt.products.map((item) => (
-						<Product
-							id={item.id}
-							name={item.name}
-							image={item.imageUrl}
-							price={item.price.current.text}
-						/>
-					))
-				)}
+		<>
+			<h1>Men</h1>
+			<Grid container className="men">
+				<ClothesBanner classification="men" />
+				<Grid container style={{ paddingBottom: '10px' }}>
+					{menShirt.length === 0 ? (
+						<Loading />
+					) : (
+						menShirt.products.map((item) => (
+							<Product
+								id={item.id}
+								name={item.name}
+								image={item.imageUrl}
+								price={item.price.current.text}
+							/>
+						))
+					)}
+				</Grid>
 			</Grid>
-		</Grid>
+		</>
 	);
 };
 

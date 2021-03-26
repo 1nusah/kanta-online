@@ -7,7 +7,7 @@ import ClothesBanner from '../banner/ClothesBanner';
 import Loading from '../loading/loading';
 const Womens = () => {
 	const [women, setwomen] = useState([]);
-	
+
 	useEffect(() => {
 		var options = {
 			method: 'GET',
@@ -41,23 +41,26 @@ const Womens = () => {
 	}, []);
 
 	return (
-		<Grid container className="men">
-			<ClothesBanner classification="women" />
-			<Grid container>
-				{women.length === 0 ? (
-					<Loading />
-				) : (
-					women.products.map((item) => (
-						<Product
-							id={item.id}
-							name={item.name}
-							image={item.imageUrl}
-							price={item.price.current.text}
-						/>
-					))
-				)}
+		<>
+			<h1>Women</h1>
+			<Grid container className="men">
+				<ClothesBanner classification="women" />
+				<Grid container>
+					{women.length === 0 ? (
+						<Loading />
+					) : (
+						women.products.map((item) => (
+							<Product
+								id={item.id}
+								name={item.name}
+								image={item.imageUrl}
+								price={item.price.current.text}
+							/>
+						))
+					)}
+				</Grid>
 			</Grid>
-		</Grid>
+		</>
 	);
 };
 

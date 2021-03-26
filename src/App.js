@@ -41,7 +41,6 @@ function App() {
 				<Header />
 				<Switch>
 					<Route path="/men">
-						<h1>Men</h1>
 						<Mens />
 					</Route>
 					<Route path="/success">
@@ -51,15 +50,12 @@ function App() {
 						<Shop />
 					</Route>
 					<Route path="/women">
-						<h1>WomMen</h1>
 						<Womens />
 					</Route>
 					<Route path="/bags">
-						<h1>bags</h1>
 						<BagProducts />
 					</Route>
 					<Route path="/shoes">
-						<h1>shoes</h1>
 						<ShoeProducts />
 					</Route>
 					<Route path="/children">
