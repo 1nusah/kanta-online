@@ -1,6 +1,6 @@
 import React from 'react';
 import Mens from '../components/men/MenClothes';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Home from '../components/home/Home';
 import Cart from '../components/cart/Cart';
 import ProductCheckOut from '../components/productCheckout/ProductCheckout';
@@ -68,7 +68,9 @@ const routes = [
 export const renderRoutes = (
 	<Switch>
 		{routes.map((route) => (
-			<Route path={route.path}>{route.component}</Route>
+			<Route key={route.path} path={route.path}>
+				{route.component}
+			</Route>
 		))}
 	</Switch>
 );
