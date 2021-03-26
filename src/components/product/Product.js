@@ -25,7 +25,7 @@ const Product = ({ image, name, price, id, quantity }) => {
 			<img
 				src={'https://' + image}
 				alt={name}
-				width="100%"
+				width="50%"
 				height="auto"
 				onClick={handleSelect}
 			/>
