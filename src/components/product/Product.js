@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Grid } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import './Product.css';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useStateValue } from '../../StateProvider';
 const Product = ({ image, name, price, id, quantity }) => {
 	// const [selectedItem, setselectedItem] = useState({});
@@ -21,6 +23,7 @@ const Product = ({ image, name, price, id, quantity }) => {
 		history.push('/productcheckout');
 	};
 	return (
+<<<<<<< HEAD
 		<Grid item xs={12} sm={12} md={3} lg={3} className="product">
 			<div className="product_item">
 				<img
@@ -38,6 +41,34 @@ const Product = ({ image, name, price, id, quantity }) => {
 					{price}
 				</p>
 			</div>
+=======
+		<Grid
+			item
+			xs={12}
+			sm={12}
+			md={3}
+			lg={3}
+			style={{
+				marginRight: '2%',
+				marginLeft: '2%',
+				// justifyContent: 'center',
+				// alignItems: 'center',
+			}}
+		>
+			<img
+				src={'https://' + image}
+				alt={name}
+				width="100%"
+				height="auto"
+				onClick={handleSelect}
+			/>
+			<p className="product_name" onClick={handleSelect}>
+				{name}
+			</p>
+			<p className="product_price" onClick={handleSelect}>
+				{price}
+			</p>
+>>>>>>> main
 		</Grid>
 	);
 };

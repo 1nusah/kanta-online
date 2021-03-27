@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography, Grid, Button } from '@material-ui/core';
-import '../men/MenClothes.css'
 
 // this is the banner component
 // we have a list of buttons that should be displayed
@@ -12,7 +11,12 @@ import '../men/MenClothes.css'
 // use a .map to render this shit
 // then finally when you click on the button then we add the button text to the search query
 
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+
 const ClothesBanner = ({ classification }) => {
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
 	const menBanner = ['view all', 'casual', 'shirts', 'trousers', 'hoodies'];
 	const shoeBanner = [
 		'view all',
@@ -40,25 +44,22 @@ const ClothesBanner = ({ classification }) => {
 			: shoeBanner;
 
 	return (
-		<Grid container>
+<>    
 			<Grid item xs={12} md={12} sm={12} lg={12} className="men_banner">
-				{/* <h1>{classification}</h1> */}
-				<Typography
-					className="men_banner_brand"
-					variant="h3"
-					style={{ color: '#fff' }}
-				>
-					{classification}
-				</Typography>
-				{renderedBanner?.map((item) => (
-					<Button key="item" className="men_banner_items">
-						{item}
-					</Button>
-				))}
-	
-			</Grid>
+			<Typography
+				className="men_banner_brand"
+				variant="h3"
+				style={{ color: '#fff' }}
+			>
+				{classification}    
+			</Typography>
+			{renderedBanner?.map((item) => (
+				<Button key="item" className="men_banner_items">
+					{item}
+				</Button>
+			))}
 		</Grid>
-	);
-};
-
+		</>     
+	)
+      
 export default ClothesBanner;
