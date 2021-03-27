@@ -44,22 +44,25 @@ const ClothesBanner = ({ classification }) => {
 			: shoeBanner;
 
 	return (
-<>    
-			<Grid item xs={12} md={12} sm={12} lg={12} className="men_banner">
-			<Typography
-				className="men_banner_brand"
-				variant="h3"
-				style={{ color: '#fff' }}
-			>
-				{classification}    
-			</Typography>
-			{renderedBanner?.map((item) => (
-				<Button key="item" className="men_banner_items">
-					{item}
-				</Button>
-			))}
+		<Grid container>
+			{!isMobile && (
+				<Grid item xs={12} md={12} sm={12} lg={12} className="men_banner">
+					<Typography
+						className="men_banner_brand"
+						variant="h3"
+						style={{ color: '#fff' }}
+					>
+						{classification}
+					</Typography>
+					{renderedBanner?.map((item) => (
+						<Button key="item" className="men_banner_items">
+							{item}
+						</Button>
+					))}
+				</Grid>
+			)}
 		</Grid>
-		</>     
-	)
-      
+	);
+};
+
 export default ClothesBanner;
