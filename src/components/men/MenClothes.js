@@ -7,6 +7,7 @@ import Loading from '../loading/loading';
 import useRequest from '../../hooks/useRequest';
 const Mens = () => {
 	const menShirt = useRequest('men,hoodie');
+	//first trigger
 	return (
 		<>
 			<h1>Men</h1>
@@ -16,6 +17,7 @@ const Mens = () => {
 					container
 					justify="center"
 					alignItems="center"
+					direction="row"
 					style={{ paddingBottom: '10px' }}
 				>
 					{menShirt.length === 0 ? (
