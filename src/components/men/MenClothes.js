@@ -17,6 +17,7 @@ const Mens = () => {
 					container
 					justify="center"
 					alignItems="center"
+					direction="row"
 					style={{ paddingBottom: '10px' }}
 				>
 					{menShirt.length === 0 ? (
