@@ -10,14 +10,9 @@ const Mens = () => {
 	return (
 		<>
 			<h1>Men</h1>
-			<Grid container className="men">
+			<Grid container className="men" spacing={3}>
 				<ClothesBanner classification="men" />
-				<Grid
-					container
-					justify="center"
-					alignItems="center"
-					style={{ paddingBottom: '10px' }}
-				>
+				<Grid container>
 					{menShirt.length === 0 ? (
 						<Loading />
 					) : (

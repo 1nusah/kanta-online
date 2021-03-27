@@ -22,19 +22,22 @@ const Product = ({ image, name, price, id, quantity }) => {
 	};
 	return (
 		<Grid item xs={12} sm={12} md={3} lg={3} className="product">
-			<img
-				src={'https://' + image}
-				alt={name}
-				width="50%"
-				height="auto"
-				onClick={handleSelect}
-			/>
-			<p className="product_name" onClick={handleSelect}>
-				{name}
-			</p>
-			<p className="product_price" onClick={handleSelect}>
-				{price}
-			</p>
+			<div className="product_item">
+				<img
+					src={'https://' + image}
+					alt={name}
+					width="50%"
+					height="auto"
+					onClick={handleSelect}
+					// style={{ textAlign: 'center' }}
+				/>
+				<p className="product_name" onClick={handleSelect}>
+					{name}
+				</p>
+				<p className="product_price" onClick={handleSelect}>
+					{price}
+				</p>
+			</div>
 		</Grid>
 	);
 };
