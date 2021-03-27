@@ -42,7 +42,6 @@ const Product = ({ image, name, price, id, quantity }) => {
 				width="100%"
 				height="auto"
 				onClick={handleSelect}
-				style={{ marginLeft: 'auto', marginRight: 'auto', textAlign: 'center' }}
 			/>
 			<p className="product_name" onClick={handleSelect}>
 				{name}
