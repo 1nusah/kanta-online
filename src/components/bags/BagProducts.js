@@ -8,7 +8,7 @@ import useRequest from '../../hooks/useRequest';
 const BagProducts = () => {
 	const bags = useRequest('bag');
 	return (
-		<>
+		<>   
 			<h1>bags</h1>
 			<Grid>
 				<Grid container alignItems="center" spacing={3} className="men">
