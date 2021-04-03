@@ -10,7 +10,8 @@ const Womens = () => {
 	return (
 		<>
 			<h1>Women</h1>
-			<Grid container className="men">
+			<Grid container  
+			 spacing={3} className="men">
 				<ClothesBanner classification="women" />
 				<Grid container>
 					{women.length === 0 ? (

@@ -11,8 +11,11 @@ const Mens = () => {
 	return (
 		<>
 			<h1>Men</h1>
-			<Grid container className="men">
+			<Grid container className="men" spacing={3}>
 				<ClothesBanner classification="men" />
+<<<<<<< HEAD
+				<Grid container>
+=======
 				<Grid
 					container
 					justify="center"
@@ -20,6 +23,7 @@ const Mens = () => {
 					direction="row"
 					style={{ paddingBottom: '10px' }}
 				>
+>>>>>>> main
 					{menShirt.length === 0 ? (
 						<Loading />
 					) : (
