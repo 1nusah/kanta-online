@@ -8,25 +8,27 @@ import useRequest from '../../hooks/useRequest';
 const BagProducts = () => {
 	const bags = useRequest('bag');
 	return (
-		<>
+		<>   
 			<h1>bags</h1>
-			<Grid container className="men">
-				<ClotehesBanner classification="bags" />
-				{bags.length === 0 ? (
-					<Loading />
-				) : (
-					<Fragment>
-						{bags.products.map((item) => (
-							<Product
-								key={item.id}
-								id={item.id}
-								name={item.name}
-								image={item.imageUrl}
-								price={item.price.current.text}
-							/>
-						))}
-					</Fragment>
-				)}
+			<Grid>
+				<Grid container alignItems="center" spacing={3} className="men">
+					<ClotehesBanner classification="bags" />
+					{bags.length === 0 ? (
+						<Loading />
+					) : (
+						<Fragment>
+							{bags.products.map((item) => (
+								<Product
+									key={item.id}
+									id={item.id}
+									name={item.name}
+									image={item.imageUrl}
+									price={item.price.current.text}
+								/>
+							))}
+						</Fragment>
+					)}
+				</Grid>
 			</Grid>
 		</>
 	);

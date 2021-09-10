@@ -26,6 +26,7 @@ const options = {
 
 const useRequest = (query) => {
 	const [data, setData] = useState([]);
+	// const [loader, setloader] = useState(true);
 
 	useEffect(() => {
 		(async () => {
@@ -38,12 +39,13 @@ const useRequest = (query) => {
 					},
 				});
 				setData(payload.data);
+				// setloader(false);
 			} catch (e) {
 				console.log(e);
 			}
 		})();
 	}, []);
-
+//add loader to data
 	return data;
 };
 export default useRequest;

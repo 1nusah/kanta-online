@@ -1,18 +1,31 @@
-.product {
+/* .product {
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-top: 15px;
-}
+} */
+/* 
+.product__img {
+	width: 100%;
+	display: grid;
+	place-items: center;
+} */
+
 .product_price {
 	background-color: #adadaa;
 	color: white;
-	width: 70px;
 	font-size: 12px;
 	text-align: center;
 	margin-bottom: 10px;
+	padding: 3px;
 }
 .product_name {
 	color: #adadad;
-	width: 75%;
 	font-size: 15px;
+	text-align: center;
+}
+
+.product_item {
+	display: grid;
+	place-items: center;
+	text-align: center;
 }
