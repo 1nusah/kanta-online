@@ -12,6 +12,7 @@
 		"clsx": "^1.1.1",
 		"react": "^16.14.0",
 		"react-dom": "^16.14.0",
+		"react-lazyload": "^3.2.0",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "3.4.3",
 		"sweetalert": "^2.1.2"
@@ -37,5 +38,4 @@
 			"last 1 safari version"
 		]
 	}
-
 }

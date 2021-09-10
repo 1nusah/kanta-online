@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../components/home/Home';
 import Cart from '../components/cart/Cart';
 import ProductCheckOut from '../components/productCheckout/ProductCheckout';
-import Checkout from '../components/checkout/CheckOut';
 import Womens from '../components/women/women';
 import ChildrenProducts from '../components/children/ChildrenProducts';
 import BagProducts from '../components/bags/BagProducts';
