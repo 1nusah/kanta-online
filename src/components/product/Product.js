@@ -6,7 +6,6 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useStateValue } from '../../StateProvider';
 
-
 const Product = ({ image, name, price, id, quantity }) => {
 	// const [selectedItem, setselectedItem] = useState({});
 	const history = useHistory();
@@ -33,7 +32,6 @@ const Product = ({ image, name, price, id, quantity }) => {
 					width="50%"
 					height="auto"
 					onClick={handleSelect}
-					
 				/>
 				<p className="product_name" onClick={handleSelect}>
 					{name}
@@ -42,9 +40,7 @@ const Product = ({ image, name, price, id, quantity }) => {
 					{price}
 				</p>
 			</div>
-
 		</Grid>
-			
-			
-)
+	);
+};
 export default Product;

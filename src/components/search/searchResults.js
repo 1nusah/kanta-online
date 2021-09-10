@@ -5,7 +5,7 @@ import Loading from '../loading/loading';
 import { useStateValue } from '../../StateProvider';
 
 const SearchResults = () => {
-	const [{ searchResults }] = useStateValue();
+	const [{ searchResults }, dispatch] = useStateValue();
 
 	return (
 		<Grid container className="men">
