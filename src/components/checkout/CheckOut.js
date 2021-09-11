@@ -8,6 +8,7 @@ import {
 	FormControl,
 	FormControlLabel,
 	Button,
+	TextField,
 } from '@material-ui/core';
 import { CssTextField } from '../input';
 import { Link } from 'react-router-dom';
@@ -40,7 +41,7 @@ const Checkout = () => {
 				<Grid item xs={12} sm={12} md={12} lg={12} className="checkout_header">
 					<Typography variant="h5">Checkout</Typography>
 				</Grid>
-				<Grid container>
+				<Grid container spacing={3}>
 					<Grid item xs={12} sm={12} md={6} lg={6}>
 						<div style={{ marginBottom: '20px' }}>
 							<CssTextField
@@ -142,7 +143,6 @@ const Checkout = () => {
 						<div
 							style={{
 								backgroundColor: '#333',
-								marginLeft: '25px',
 								color: '#adadad',
 								padding: '10px',
 							}}
@@ -167,6 +167,7 @@ const Checkout = () => {
 											display: 'flex',
 											flexDirection: 'row',
 											paddingBottom: '10px',
+											justifyItems: 'between',
 										}}
 									>
 										<p style={{ textAlign: 'left', paddingRight: '50%' }}>
@@ -185,11 +186,17 @@ const Checkout = () => {
 									display: 'flex',
 									flexDirection: 'row',
 									paddingBottom: '10px',
+									justifyContent: 'space-between',
+									color: '#fff',
 								}}
 							>
-								<p style={{ color: '#fff', paddingRight: '85%' }}>Total</p>
-								<p style={{ color: '#fff' }}>${total + '.00'}</p>
+								<p>
+									{/* Haban Hoodie(qty. 5) */}
+									Total
+								</p>
+								<p>${total + '.00'}</p>
 							</div>
+
 							<FormControl component="fieldset">
 								<RadioGroup onChange={handleChange} name="paymentOptions">
 									<FormControlLabel
