@@ -169,16 +169,15 @@ const Checkout = () => {
 											display: 'flex',
 											flexDirection: 'row',
 											paddingBottom: '10px',
-											justifyItems: 'between',
+											justifyContent: 'space-between',
+											color: '#fff',
 										}}
 									>
-										<p style={{ textAlign: 'left', paddingRight: '50%' }}>
+										<p>
 											{/* Haban Hoodie(qty. 5) */}
 											{item.name}
 										</p>
-										<p style={{ textAlign: 'right', color: '#fff' }}>
-											{item.price}
-										</p>
+										<p>{item.price}</p>
 									</div>
 								);
 							})}
