@@ -11,6 +11,8 @@ import Ill from '../../assets/illustration/undraw_empty_cart_co35.svg';
 const Cart = ({ id }) => {
 	const [{ basket }, dispatch] = useStateValue();
 
+	console.log(basket);
+
 	const removeFromBasket = (id) => {
 		//to remove the item from the baskets
 		dispatch({
@@ -41,27 +43,30 @@ const Cart = ({ id }) => {
 				</Grid>
 			) : (
 				<div>
-					<Grid container style={{ marginTop: '5%', backgroundColor: '#333' }}>
-						<Grid
-							item
-							xs={12}
-							md={12}
-							sm={12}
-							lg={12}
+					<div
+						style={{ marginTop: '5%', backgroundColor: '#333', width: '100%' }}
+					>
+						<div
 							style={{
-								display: 'flex',
-								flexDirection: 'row',
-								marginBottom: '3%',
+								display: 'grid',
+
+								width: '100%',
+								gridTemplateColumns: 'repeat(4, 1fr)',
 							}}
 						>
-							<h3 style={{ width: '25%' }}>Product</h3>
-							<h3 style={{ width: '25%' }}>Price</h3>
-							<h3 style={{ width: '25%' }}>Quantity</h3>
-							<h3 style={{ width: '25%' }}>Total</h3>
-						</Grid>
+							<h3>Product</h3>
+							<h3>Price</h3>
+							<h3>Quantity</h3>
+							<h3>Total</h3>
+						</div>
 						{basket.map((item) => (
-							<Grid container>
-								<Grid item xs={12} sm={12} md={3} lg={3} key={item.id}>
+							<div
+								style={{
+									display: 'grid',
+									gridTemplateColumns: 'repeat(4,1fr)',
+								}}
+							>
+								<div item xs={12} sm={12} md={3} lg={3} key={item.id}>
 									<div style={{ display: 'flex', flexDirection: 'row' }}>
 										<div style={{ width: '150px', height: '150px' }}>
 											<img
@@ -73,18 +78,18 @@ const Cart = ({ id }) => {
 										</div>
 										<p style={{ paddingLeft: '5px' }}>{item.name}</p>
 									</div>
-								</Grid>
-								<Grid item xs={12} sm={12} md={3} lg={3}>
+								</div>
+								<div item xs={12} sm={12} md={3} lg={3}>
 									<p>{item.price}</p>
-								</Grid>
-								<Grid item xs={12} sm={12} md={3} lg={3}>
+								</div>
+								<div item xs={12} sm={12} md={3} lg={3}>
 									<div style={{ display: 'flex', flexDirection: 'row' }}>
 										<p style={{ marginRight: '5px', marginLeft: '5px' }}>
 											{item.quantity}
 										</p>
 									</div>
-								</Grid>
-								<Grid item xs={12} sm={12} md={3} lg={3}>
+								</div>
+								<div item xs={12} sm={12} md={3} lg={3}>
 									<div style={{ display: 'flex', flexDirection: 'row' }}>
 										<p style={{ marginRight: '5px', marginLeft: '5px' }}>
 											${item.quantity * item.price.substring(1)}
@@ -95,20 +100,18 @@ const Cart = ({ id }) => {
 											className="delete"
 										/>
 									</div>
-								</Grid>
-							</Grid>
-						))}
-					</Grid>
-					<Grid container justify="center" alignItems="center">
-						<Grid item xs={12} sm={12} md={12} lg={12}>
-							<Link to="/checkout" className="header_link">
-								<div className="productcheckout_button">
-									<Button color="secondary" variant="contained">
-										Proceed
-									</Button>
 								</div>
-							</Link>
-						</Grid>
+							</div>
+						))}
+					</div>
+					<Grid item xs={12} sm={12} md={12} lg={12}>
+						<Link to="/checkout" className="header_link">
+							<div style={{ paddingTop: 10 }}>
+								<Button color="secondary" variant="contained">
+									Proceed
+								</Button>
+							</div>
+						</Link>
 					</Grid>
 				</div>
 			)}

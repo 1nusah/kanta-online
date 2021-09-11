@@ -12,11 +12,16 @@ import OrderSuccess from '../components/orderPage/OrderSuccess';
 import Shop from '../components/shop/Shop';
 import Search from '../components/search/search';
 import SearchResults from '../components/search/searchResults';
+import Checkout from '../components/checkout/CheckOut';
 
 const routes = [
 	{
 		path: '/men',
 		component: <Mens />,
+	},
+	{
+		path: '/checkout',
+		component: <Checkout />,
 	},
 	{
 		path: '/success',

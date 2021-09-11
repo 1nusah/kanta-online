@@ -8,9 +8,10 @@ import {
 	FormControl,
 	FormControlLabel,
 	Button,
+	TextField,
 } from '@material-ui/core';
 import { CssTextField } from '../input';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { useStateValue } from '../../StateProvider';
 
@@ -21,6 +22,7 @@ const Checkout = () => {
 	const handleChange = (event) => {
 		setValue([...userDetails, { paymentOption: event.target.value }]);
 	};
+	const history = useHistory();
 	const handleDeets = (event) => {
 		const target = event.target;
 		const name = target.name;
@@ -31,6 +33,7 @@ const Checkout = () => {
 			type: 'CONFIRM_USER_DETAILS',
 			userDeets: userDetails,
 		});
+		history.push('/success');
 	};
 	let total = 0;
 
@@ -40,7 +43,7 @@ const Checkout = () => {
 				<Grid item xs={12} sm={12} md={12} lg={12} className="checkout_header">
 					<Typography variant="h5">Checkout</Typography>
 				</Grid>
-				<Grid container>
+				<Grid container spacing={3}>
 					<Grid item xs={12} sm={12} md={6} lg={6}>
 						<div style={{ marginBottom: '20px' }}>
 							<CssTextField
@@ -142,7 +145,6 @@ const Checkout = () => {
 						<div
 							style={{
 								backgroundColor: '#333',
-								marginLeft: '25px',
 								color: '#adadad',
 								padding: '10px',
 							}}
@@ -167,15 +169,15 @@ const Checkout = () => {
 											display: 'flex',
 											flexDirection: 'row',
 											paddingBottom: '10px',
+											justifyContent: 'space-between',
+											color: '#fff',
 										}}
 									>
-										<p style={{ textAlign: 'left', paddingRight: '50%' }}>
+										<p>
 											{/* Haban Hoodie(qty. 5) */}
 											{item.name}
 										</p>
-										<p style={{ textAlign: 'right', color: '#fff' }}>
-											{item.price}
-										</p>
+										<p>{item.price}</p>
 									</div>
 								);
 							})}
@@ -185,11 +187,17 @@ const Checkout = () => {
 									display: 'flex',
 									flexDirection: 'row',
 									paddingBottom: '10px',
+									justifyContent: 'space-between',
+									color: '#fff',
 								}}
 							>
-								<p style={{ color: '#fff', paddingRight: '85%' }}>Total</p>
-								<p style={{ color: '#fff' }}>${total + '.00'}</p>
+								<p>
+									{/* Haban Hoodie(qty. 5) */}
+									Total
+								</p>
+								<p>${total + '.00'}</p>
 							</div>
+
 							<FormControl component="fieldset">
 								<RadioGroup onChange={handleChange} name="paymentOptions">
 									<FormControlLabel
@@ -215,15 +223,15 @@ const Checkout = () => {
 								</RadioGroup>
 							</FormControl>
 							<div style={{ textAlign: 'center' }}>
-								<Link to="/success">
-									<Button
-										variant="contained"
-										style={{ backgroundColor: 'inherit', color: '#adadad' }}
-										onClick={confirmDeets}
-									>
-										Place Order
-									</Button>
-								</Link>
+								{/* <Link to="/success"> */}
+								<Button
+									variant="contained"
+									style={{ backgroundColor: 'inherit', color: '#adadad' }}
+									onClick={confirmDeets}
+								>
+									Place Order
+								</Button>
+								{/* </Link> */}
 							</div>
 						</div>
 					</Grid>

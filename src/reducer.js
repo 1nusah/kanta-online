@@ -1,5 +1,22 @@
 export const initialState = {
-	basket: [],
+	basket: [
+		{
+			id: 200818019,
+			name: "Nobody's Child Felicia floral bloom print midi dress in purple",
+			image:
+				'images.asos-media.com/products/nobodys-child-felicia-floral-bloom-print-midi-dress-in-purple/200818019-1-purplefloral',
+			price: '$72.00',
+			quantity: 1,
+		},
+		{
+			id: 200818019,
+			name: "Nobody's Child Felicia floral bloom print midi dress in purple",
+			image:
+				'images.asos-media.com/products/nobodys-child-felicia-floral-bloom-print-midi-dress-in-purple/200818019-1-purplefloral',
+			price: '$72.00',
+			quantity: 1,
+		},
+	],
 	user: null,
 	selectedItem: {},
 	searchResults: [],

@@ -12,13 +12,13 @@ import { green } from '@material-ui/core/colors';
 export const CssTextField = withStyles({
 	root: {
 		'& label.Mui-focused': {
-			color: '#adadad',
+			color: '#fff',
 		},
 		'& .MuiInput-underline:after': {
 			borderBottomColor: '#adadad',
 		},
 		'& .MuiInputBase-input': {
-			color: '#adadad', // Text color
+			color: '#fff', // Text color
 		},
 		'& .MuiInput-underline:hover:before': {
 			borderBottomColor: '#adadad', // Solid underline on hover

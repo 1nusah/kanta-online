@@ -55,7 +55,6 @@ export default function Header(props) {
 	return (
 		<div className="header">
 			<AppBar position="fixed">
-				{/* style={{ backgroundColor: '#333333', width: '100%' }} */}
 				<Toolbar className={classes.title}>
 					<Typography className="header_brand" variant="h6">
 						<Link to="/" className="header_link">
