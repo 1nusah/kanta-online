@@ -11,7 +11,7 @@ import {
 	TextField,
 } from '@material-ui/core';
 import { CssTextField } from '../input';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { useStateValue } from '../../StateProvider';
 
@@ -22,6 +22,7 @@ const Checkout = () => {
 	const handleChange = (event) => {
 		setValue([...userDetails, { paymentOption: event.target.value }]);
 	};
+	const history = useHistory();
 	const handleDeets = (event) => {
 		const target = event.target;
 		const name = target.name;
@@ -32,6 +33,7 @@ const Checkout = () => {
 			type: 'CONFIRM_USER_DETAILS',
 			userDeets: userDetails,
 		});
+		history.push('/success');
 	};
 	let total = 0;
 
@@ -222,15 +224,15 @@ const Checkout = () => {
 								</RadioGroup>
 							</FormControl>
 							<div style={{ textAlign: 'center' }}>
-								<Link to="/success">
-									<Button
-										variant="contained"
-										style={{ backgroundColor: 'inherit', color: '#adadad' }}
-										onClick={confirmDeets}
-									>
-										Place Order
-									</Button>
-								</Link>
+								{/* <Link to="/success"> */}
+								<Button
+									variant="contained"
+									style={{ backgroundColor: 'inherit', color: '#adadad' }}
+									onClick={confirmDeets}
+								>
+									Place Order
+								</Button>
+								{/* </Link> */}
 							</div>
 						</div>
 					</Grid>
